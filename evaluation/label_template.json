@@ -1,0 +1,12 @@
+{
+  "video_id": "REPLACE_with_file_name_without_extension",
+  "video_file": "evaluation/videos/REPLACE.mp4",
+  "duration_s": 0.0,
+  "reviewed_categories": ["fps_drop"],
+  "annotator": "",
+  "source": "self-recorded | public:<url> | synthetic",
+  "synthetic": false,
+  "events": [
+    {"category": "fps_drop", "subtype": "frozen_frame", "start_s": 0.0, "end_s": 0.0, "notes": ""}
+  ]
+}

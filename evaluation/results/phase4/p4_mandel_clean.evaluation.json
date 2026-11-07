@@ -1,0 +1,32 @@
+{
+  "video_id": "p4_mandel_clean",
+  "synthetic": true,
+  "duration_s": 20.0,
+  "per_category": {
+    "texture_pop_in": {
+      "category": "texture_pop_in",
+      "n_predictions": 1,
+      "n_ground_truth": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": null,
+      "f1": null,
+      "fp_per_minute": 3.0,
+      "matches": [],
+      "false_positives": [
+        {
+          "detection_id": "7067077fa4884c83b8b526002dc59714",
+          "subtype": "texture_pop_in",
+          "start_s": 1.233333,
+          "end_s": 1.25,
+          "peak_s": 1.25,
+          "confidence": 0.864
+        }
+      ],
+      "false_negatives": []
+    }
+  },
+  "unscored_predictions": 0
+}

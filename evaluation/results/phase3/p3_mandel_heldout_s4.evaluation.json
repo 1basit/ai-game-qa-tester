@@ -1,0 +1,60 @@
+{
+  "video_id": "p3_mandel_heldout_s4",
+  "synthetic": true,
+  "duration_s": 20.0,
+  "per_category": {
+    "fps_drop": {
+      "category": "fps_drop",
+      "n_predictions": 6,
+      "n_ground_truth": 6,
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "fp_per_minute": 0.0,
+      "matches": [
+        {
+          "detection_id": "6752cefc266b40a58ca2abf8294e7260",
+          "gt_index": 1,
+          "tiou": 0.9816,
+          "peak_error_s": -0.4417
+        },
+        {
+          "detection_id": "7f96b8af083647dca5e701a7cb6152f5",
+          "gt_index": 2,
+          "tiou": 0.9797,
+          "peak_error_s": -0.3183
+        },
+        {
+          "detection_id": "b0e366aca84e4e7699a50c4ff3f34a19",
+          "gt_index": 0,
+          "tiou": 0.9649,
+          "peak_error_s": -0.1767
+        },
+        {
+          "detection_id": "0961b03aa7db4146857f06d09301a335",
+          "gt_index": 5,
+          "tiou": 0.9552,
+          "peak_error_s": -0.2067
+        },
+        {
+          "detection_id": "e739f9be482e42c1ac6e1917f0729711",
+          "gt_index": 4,
+          "tiou": 0.6364,
+          "peak_error_s": -0.225
+        },
+        {
+          "detection_id": "9559e043cd884aaf85b70dba1634e7c7",
+          "gt_index": 3,
+          "tiou": 0.6073,
+          "peak_error_s": -0.135
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": []
+    }
+  },
+  "unscored_predictions": 0
+}

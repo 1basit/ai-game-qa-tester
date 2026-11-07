@@ -1,0 +1,68 @@
+{
+  "video_id": "p5_v1game_s3",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/v1game_s3.mp4",
+  "duration_s": 15.9167,
+  "reviewed_categories": [
+    "animation_glitch"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 3",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 11.78,
+      "end_s": 12.19,
+      "bbox": {
+        "x": 0.487,
+        "y": 0.077,
+        "w": 0.225,
+        "h": 0.184
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "start_s": 1.32,
+      "end_s": 1.64,
+      "bbox": {
+        "x": 0.318,
+        "y": 0.396,
+        "w": 0.261,
+        "h": 0.374
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 7.91,
+      "end_s": 8.78
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 13.3,
+      "end_s": 13.4
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 2.98,
+      "end_s": 3.08
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 6.4,
+      "end_s": 6.8
+    }
+  ],
+  "ignore": [
+    {
+      "start_s": 8.8833,
+      "end_s": 9.1167,
+      "reason": "one-frame jump: cut or real hitch, ambiguous"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "video_id": "v1_clip_tuning",
+    "synthetic": false,
+    "duration_s": 199.25,
+    "per_category": {
+      "collision_clipping": {
+        "category": "collision_clipping",
+        "n_predictions": 2,
+        "n_ground_truth": 3,
+        "tp": 2,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "fp_per_minute": 0.0,
+        "matches": [
+          {
+            "detection_id": "5682ed49ec7e434abebb508ec5522b91",
+            "gt_index": 2,
+            "tiou": 0.2517,
+            "peak_error_s": -0.415
+          },
+          {
+            "detection_id": "973ed07443d44cc19ef778de65dfc533",
+            "gt_index": 0,
+            "tiou": 0.0,
+            "peak_error_s": -0.5683
+          }
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          {
+            "category": "collision_clipping",
+            "subtype": "character_geometry",
+            "start_s": 3.38,
+            "end_s": 3.55,
+            "bbox": null,
+            "notes": "clip 1: front sight hidden"
+          }
+        ]
+      }
+    },
+    "unscored_predictions": 0,
+    "ignored_predictions": 0
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "video_id": "p5_v1game_s0",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/v1game_s0.mp4",
+  "duration_s": 15.0833,
+  "reviewed_categories": [
+    "animation_glitch"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 0",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 9.54,
+      "end_s": 9.64
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 12.02,
+      "end_s": 12.88
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 2.57,
+      "end_s": 2.96
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 7.6,
+      "end_s": 7.7
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 4.74,
+      "end_s": 5.54
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "start_s": 1.18,
+      "end_s": 1.5,
+      "bbox": {
+        "x": 0.485,
+        "y": 0.18,
+        "w": 0.28,
+        "h": 0.301
+      }
+    }
+  ],
+  "ignore": [
+    {
+      "start_s": 4.25,
+      "end_s": 4.4667,
+      "reason": "video-editing cut (tutorial clip boundary)"
+    },
+    {
+      "start_s": 9.2833,
+      "end_s": 9.5167,
+      "reason": "one-frame jump: cut or real hitch, ambiguous"
+    }
+  ]
+}

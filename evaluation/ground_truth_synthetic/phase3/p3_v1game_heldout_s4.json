@@ -1,0 +1,49 @@
+{
+  "video_id": "p3_v1game_heldout_s4",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/v1game_heldout_s4.mp4",
+  "duration_s": 18.5167,
+  "reviewed_categories": [
+    "fps_drop"
+  ],
+  "annotator": "injection script",
+  "source": "held-out random injection seed 4, CRF 23",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 4.52,
+      "end_s": 5.47
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 1.27,
+      "end_s": 1.93
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 7.1,
+      "end_s": 7.95
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 14.25,
+      "end_s": 14.77
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 10.28,
+      "end_s": 11.6
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 17.03,
+      "end_s": 17.84
+    }
+  ]
+}

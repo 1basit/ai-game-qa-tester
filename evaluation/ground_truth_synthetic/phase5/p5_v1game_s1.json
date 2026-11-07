@@ -1,0 +1,50 @@
+{
+  "video_id": "p5_v1game_s1",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/v1game_s1.mp4",
+  "duration_s": 13.8167,
+  "reviewed_categories": [
+    "animation_glitch"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 1",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 4.46,
+      "end_s": 5.2
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 7.73,
+      "end_s": 7.83
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 0.78,
+      "end_s": 0.88
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 12.68,
+      "end_s": 12.78
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 8.98,
+      "end_s": 9.48
+    }
+  ],
+  "ignore": [
+    {
+      "start_s": 2.5833,
+      "end_s": 2.8,
+      "reason": "video-editing cut (tutorial clip boundary)"
+    }
+  ]
+}

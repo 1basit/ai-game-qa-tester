@@ -1,0 +1,218 @@
+{
+  "video_id": "p5_photo_s2",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/photo_s2.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 1122,
+    "duration_s": 18.7,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 2765457,
+    "fingerprint": "09b704e4e2dd12a779a26d3f251424f0030b3a34a63d3986b52b547181632c1a",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 1121,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 1122,
+    "declared_duration_s": 18.7,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-07T06:53:29.316780Z",
+  "detections": [
+    {
+      "id": "78c879577c164c4bb2b5f9de08203454",
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 1.216667,
+      "end_time_s": 1.233333,
+      "peak_time_s": 1.233333,
+      "start_frame": 73,
+      "end_frame": 74,
+      "peak_frame": 74,
+      "confidence": 0.691,
+      "bbox": null,
+      "affected_area_ratio": 1.0,
+      "description": "One-frame discontinuity: the image jumped and motion continued normally",
+      "metrics": {
+        "change": 34.64,
+        "recent_median_change": 4.76
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "71ce8b86ff894f108a6505ad8930e88f",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 2.683333,
+      "end_time_s": 3.566667,
+      "peak_time_s": 2.716667,
+      "start_frame": 161,
+      "end_frame": 214,
+      "peak_frame": 163,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.375,
+        "y": 0.1111111111111111,
+        "w": 0.1875,
+        "h": 0.4444444444444444
+      },
+      "affected_area_ratio": 0.083333,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.883,
+        "frames": 54,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "7e911b6db5e94b7e8d37f6c845cf5cc4",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 8.55,
+      "end_time_s": 9.166667,
+      "peak_time_s": 8.583333,
+      "start_frame": 513,
+      "end_frame": 550,
+      "peak_frame": 515,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.3125,
+        "y": 0.1111111111111111,
+        "w": 0.375,
+        "h": 0.3333333333333333
+      },
+      "affected_area_ratio": 0.125,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.617,
+        "frames": 38,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "b69c4eb440db4fd6b215b6a7ad8f1818",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 11.216667,
+      "end_time_s": 11.833333,
+      "peak_time_s": 11.25,
+      "start_frame": 673,
+      "end_frame": 710,
+      "peak_frame": 675,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "affected_area_ratio": 1.0,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.617,
+        "frames": 38,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "bff84ec3ab5d46b7b65fdd7febee4a2b",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 15.616667,
+      "end_time_s": 16.166667,
+      "peak_time_s": 15.65,
+      "start_frame": 937,
+      "end_frame": 970,
+      "peak_frame": 939,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "affected_area_ratio": 1.0,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.55,
+        "frames": 34,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "73f17e7c96784e319d0b5c1f68e05c60",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 17.35,
+      "end_time_s": 18.333333,
+      "peak_time_s": 17.4,
+      "start_frame": 1041,
+      "end_frame": 1100,
+      "peak_frame": 1044,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.5,
+        "y": 0.5555555555555556,
+        "w": 0.3125,
+        "h": 0.3333333333333333
+      },
+      "affected_area_ratio": 0.104167,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.983,
+        "frames": 60,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

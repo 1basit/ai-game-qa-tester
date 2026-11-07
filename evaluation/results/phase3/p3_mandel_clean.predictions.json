@@ -1,0 +1,37 @@
+{
+  "video_id": "p3_mandel_clean",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/mandel_clean.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 1200,
+    "duration_s": 20.0,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 117605739,
+    "fingerprint": "784a28ac485de2cfea54511ae7e502f253bf983df10e6702d6489c6e08fd15ef",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 1199,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 1200,
+    "declared_duration_s": 20.0,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-06T21:21:07.747452Z",
+  "detections": []
+}

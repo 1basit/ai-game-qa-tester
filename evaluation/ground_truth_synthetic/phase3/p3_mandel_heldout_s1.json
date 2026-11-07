@@ -1,0 +1,43 @@
+{
+  "video_id": "p3_mandel_heldout_s1",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/mandel_heldout_s1.mp4",
+  "duration_s": 20.0,
+  "reviewed_categories": [
+    "fps_drop"
+  ],
+  "annotator": "injection script",
+  "source": "held-out random injection seed 1, CRF 23",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 12.94,
+      "end_s": 14.57
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 5.98,
+      "end_s": 7.86
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 3.33,
+      "end_s": 4.63
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 17.29,
+      "end_s": 18.78
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 10.52,
+      "end_s": 11.32
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "video_id": "p5_photo_s1",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/photo_s1.mp4",
+  "duration_s": 17.9667,
+  "reviewed_categories": [
+    "animation_glitch"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 1",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 12.31,
+      "end_s": 12.92
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 16.32,
+      "end_s": 17.2
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 2.09,
+      "end_s": 2.19
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 5.05,
+      "end_s": 5.64,
+      "bbox": {
+        "x": 0.631,
+        "y": 0.1,
+        "w": 0.257,
+        "h": 0.239
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 14.01,
+      "end_s": 14.11
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 7.58,
+      "end_s": 8.24,
+      "bbox": {
+        "x": 0.129,
+        "y": 0.514,
+        "w": 0.18,
+        "h": 0.192
+      }
+    }
+  ],
+  "ignore": []
+}

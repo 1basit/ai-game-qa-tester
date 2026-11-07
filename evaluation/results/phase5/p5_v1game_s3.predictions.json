@@ -1,0 +1,212 @@
+{
+  "video_id": "p5_v1game_s3",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/v1game_s3.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 955,
+    "duration_s": 15.9167,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 2370167,
+    "fingerprint": "cf6ae4cf0e97c44572569a3f8abf045d80c1cd5868f88c95f513a384825120a3",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 954,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.01666599999999896,
+      "max_interval_s": 0.0166670000000001,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 955,
+    "declared_duration_s": 15.9167,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-07T06:53:36.554551Z",
+  "detections": [
+    {
+      "id": "d9c361828fb24fdda934d831c9226e44",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 1.4,
+      "end_time_s": 1.7,
+      "peak_time_s": 1.45,
+      "start_frame": 84,
+      "end_frame": 102,
+      "peak_frame": 87,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.3125,
+        "y": 0.3333333333333333,
+        "w": 0.25,
+        "h": 0.4444444444444444
+      },
+      "affected_area_ratio": 0.111111,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.3,
+        "frames": 19,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "7668d2dde7d943c3a0280f55d6f96756",
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 3.016667,
+      "end_time_s": 3.033333,
+      "peak_time_s": 3.033333,
+      "start_frame": 181,
+      "end_frame": 182,
+      "peak_frame": 182,
+      "confidence": 0.935,
+      "bbox": null,
+      "affected_area_ratio": 1.0,
+      "description": "One-frame discontinuity: the image jumped and motion continued normally",
+      "metrics": {
+        "change": 22.09,
+        "recent_median_change": 1.65
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "d9f88314ebdd495e8e171e3ce2e18954",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 6.5,
+      "end_time_s": 6.833333,
+      "peak_time_s": 6.533333,
+      "start_frame": 390,
+      "end_frame": 410,
+      "peak_frame": 392,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "affected_area_ratio": 1.0,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.333,
+        "frames": 21,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "d16684c532d348949d391d3bc85b64d0",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 7.983333,
+      "end_time_s": 8.816667,
+      "peak_time_s": 8.05,
+      "start_frame": 479,
+      "end_frame": 529,
+      "peak_frame": 483,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "affected_area_ratio": 1.0,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.833,
+        "frames": 47,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "66d967437a704fbda3a1798f7bc1e9c0",
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 13.333333,
+      "end_time_s": 13.35,
+      "peak_time_s": 13.35,
+      "start_frame": 800,
+      "end_frame": 801,
+      "peak_frame": 801,
+      "confidence": 0.82,
+      "bbox": null,
+      "affected_area_ratio": 1.0,
+      "description": "One-frame discontinuity: the image jumped and motion continued normally",
+      "metrics": {
+        "change": 42.65,
+        "recent_median_change": 4.06
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "ad91e081afa644948e315530d12672cb",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 15.216667,
+      "end_time_s": 15.25,
+      "peak_time_s": 15.216667,
+      "start_frame": 913,
+      "end_frame": 915,
+      "peak_frame": 913,
+      "confidence": 0.8,
+      "bbox": {
+        "x": 0.125,
+        "y": 0.0,
+        "w": 0.125,
+        "h": 0.1111111111111111
+      },
+      "affected_area_ratio": 0.013889,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.033,
+        "frames": 3,
+        "alternation_score": 0.714
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

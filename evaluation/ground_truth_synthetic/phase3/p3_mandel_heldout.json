@@ -1,0 +1,49 @@
+{
+  "video_id": "p3_mandel_heldout",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/mandel_heldout_cfr.mp4",
+  "duration_s": 20.0,
+  "reviewed_categories": [
+    "fps_drop"
+  ],
+  "annotator": "injection script",
+  "source": "held-out injection, CRF 23",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 1.0,
+      "end_s": 1.5
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 3.5,
+      "end_s": 5.5
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 7.5,
+      "end_s": 7.8
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 10.0,
+      "end_s": 11.0
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 13.0,
+      "end_s": 14.5
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 16.0,
+      "end_s": 18.5
+    }
+  ]
+}

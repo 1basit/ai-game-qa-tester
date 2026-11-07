@@ -1,0 +1,54 @@
+{
+  "video_id": "p3_v1game_heldout_s2",
+  "synthetic": true,
+  "duration_s": 18.5167,
+  "per_category": {
+    "fps_drop": {
+      "category": "fps_drop",
+      "n_predictions": 5,
+      "n_ground_truth": 5,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "fp_per_minute": 0.0,
+      "matches": [
+        {
+          "detection_id": "b1c3991a88924994bb77b4d752d388c4",
+          "gt_index": 3,
+          "tiou": 1.0,
+          "peak_error_s": -0.55
+        },
+        {
+          "detection_id": "8613f6c9895c4228a01cb7044dd4201f",
+          "gt_index": 0,
+          "tiou": 0.9789,
+          "peak_error_s": -0.31
+        },
+        {
+          "detection_id": "d71fbc33d54949f18e621120e3cbaa73",
+          "gt_index": 1,
+          "tiou": 0.9597,
+          "peak_error_s": -0.2317
+        },
+        {
+          "detection_id": "1a73b8c4fce746468c567bea0f24d108",
+          "gt_index": 4,
+          "tiou": 0.9293,
+          "peak_error_s": -0.1467
+        },
+        {
+          "detection_id": "e98e4d0d418347aa80ef23a580ba8b6e",
+          "gt_index": 2,
+          "tiou": 0.616,
+          "peak_error_s": -0.23
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": []
+    }
+  },
+  "unscored_predictions": 0
+}

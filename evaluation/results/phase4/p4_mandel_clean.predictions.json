@@ -1,0 +1,74 @@
+{
+  "video_id": "p4_mandel_clean",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase4/mandel_clean.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 1200,
+    "duration_s": 20.0,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 117605739,
+    "fingerprint": "784a28ac485de2cfea54511ae7e502f253bf983df10e6702d6489c6e08fd15ef",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 1199,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 1200,
+    "declared_duration_s": 20.0,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-06T22:17:40.127015Z",
+  "detections": [
+    {
+      "id": "7067077fa4884c83b8b526002dc59714",
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 1.233333,
+      "end_time_s": 1.25,
+      "peak_time_s": 1.25,
+      "start_frame": 74,
+      "end_frame": 75,
+      "peak_frame": 75,
+      "confidence": 0.864,
+      "bbox": {
+        "x": 0.96875,
+        "y": 0.4444444444444444,
+        "w": 0.03125,
+        "h": 0.5555555555555556
+      },
+      "affected_area_ratio": 0.017361,
+      "description": "Texture detail blurred suddenly (x4.55) with unchanged colour layout",
+      "metrics": {
+        "lowfreq_diff": 10.19,
+        "hf_before": 28.09,
+        "hf_after": 6.17,
+        "detail_ratio": 4.55,
+        "direction": "blurred",
+        "region_dssim": 0.134,
+        "frame_median_dssim": 0.013,
+        "align": "phase"
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

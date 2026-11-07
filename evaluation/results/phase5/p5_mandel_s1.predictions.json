@@ -1,0 +1,224 @@
+{
+  "video_id": "p5_mandel_s1",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/mandel_s1.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 1200,
+    "duration_s": 20.0,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 61779552,
+    "fingerprint": "86eb3c1e15f222d80ae12a51af103876bf5ad4a7802f895f16bb7fdcfc121de6",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 1199,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 1200,
+    "declared_duration_s": 20.0,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-07T06:52:55.236535Z",
+  "detections": [
+    {
+      "id": "73827657bd4a42b4bd8561b65e1f14ac",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 0.966667,
+      "end_time_s": 1.316667,
+      "peak_time_s": 1.0,
+      "start_frame": 58,
+      "end_frame": 79,
+      "peak_frame": 60,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "affected_area_ratio": 1.0,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.35,
+        "frames": 22,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "a81f6b89021e44b9a79699a3f0bcb3c0",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 2.833333,
+      "end_time_s": 3.233333,
+      "peak_time_s": 2.883333,
+      "start_frame": 170,
+      "end_frame": 194,
+      "peak_frame": 173,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.625,
+        "y": 0.4444444444444444,
+        "w": 0.3125,
+        "h": 0.3333333333333333
+      },
+      "affected_area_ratio": 0.104167,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.4,
+        "frames": 25,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "91f8d77dea9045ccbe28ea84b95c4065",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 7.683333,
+      "end_time_s": 8.4,
+      "peak_time_s": 7.733333,
+      "start_frame": 461,
+      "end_frame": 504,
+      "peak_frame": 464,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.125,
+        "y": 0.4444444444444444,
+        "w": 0.25,
+        "h": 0.3333333333333333
+      },
+      "affected_area_ratio": 0.083333,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.717,
+        "frames": 44,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "b2f6fe7427aa4a3dae531dcc5ccec4b4",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 10.633333,
+      "end_time_s": 11.183333,
+      "peak_time_s": 10.683333,
+      "start_frame": 638,
+      "end_frame": 671,
+      "peak_frame": 641,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.125,
+        "y": 0.1111111111111111,
+        "w": 0.25,
+        "h": 0.3333333333333333
+      },
+      "affected_area_ratio": 0.083333,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.55,
+        "frames": 34,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "643a6e4541724e9eb680ca9c53e1bf72",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 13.45,
+      "end_time_s": 13.833333,
+      "peak_time_s": 13.5,
+      "start_frame": 807,
+      "end_frame": 830,
+      "peak_frame": 810,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.6875,
+        "y": 0.3333333333333333,
+        "w": 0.25,
+        "h": 0.4444444444444444
+      },
+      "affected_area_ratio": 0.111111,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.383,
+        "frames": 24,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "00e1f19c251d4bddab58e6b1687ccf6e",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 15.716667,
+      "end_time_s": 16.233333,
+      "peak_time_s": 15.75,
+      "start_frame": 943,
+      "end_frame": 974,
+      "peak_frame": 945,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "affected_area_ratio": 1.0,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.517,
+        "frames": 32,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

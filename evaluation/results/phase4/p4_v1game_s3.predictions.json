@@ -1,0 +1,284 @@
+{
+  "video_id": "p4_v1game_s3",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase4/v1game_s3.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 1111,
+    "duration_s": 18.5167,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 2700190,
+    "fingerprint": "117334bbf86f902a3b71d3671fabc8c0fea86de5176fe0212c051c8117b58c58",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 1110,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 1111,
+    "declared_duration_s": 18.5167,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-06T22:15:36.511082Z",
+  "detections": [
+    {
+      "id": "58fcab98479a447db015cd035ad3bfc0",
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 1.166667,
+      "end_time_s": 1.183333,
+      "peak_time_s": 1.183333,
+      "start_frame": 70,
+      "end_frame": 71,
+      "peak_frame": 71,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.36875,
+        "y": 0.3814814814814815,
+        "w": 0.2125,
+        "h": 0.32592592592592595
+      },
+      "affected_area_ratio": 0.069259,
+      "description": "Region turned into the missing-texture colour",
+      "metrics": {
+        "magenta_fraction": 0.989
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "3dc982ee6a164e698afae2a50aec4721",
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 3.683333,
+      "end_time_s": 3.7,
+      "peak_time_s": 3.7,
+      "start_frame": 221,
+      "end_frame": 222,
+      "peak_frame": 222,
+      "confidence": 0.998,
+      "bbox": {
+        "x": 0.34791666666666665,
+        "y": 0.16666666666666666,
+        "w": 0.23958333333333334,
+        "h": 0.3296296296296296
+      },
+      "affected_area_ratio": 0.078974,
+      "description": "Region turned into the missing-texture colour",
+      "metrics": {
+        "magenta_fraction": 0.498
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "1e1caf41d69f403e87d6edd1d95beeeb",
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 5.733333,
+      "end_time_s": 5.75,
+      "peak_time_s": 5.75,
+      "start_frame": 344,
+      "end_frame": 345,
+      "peak_frame": 345,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.7875,
+        "y": 0.6333333333333333,
+        "w": 0.14375,
+        "h": 0.16666666666666666
+      },
+      "affected_area_ratio": 0.023958,
+      "description": "Region turned into the missing-texture colour",
+      "metrics": {
+        "magenta_fraction": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "c042b9d1286f40e281de0c5bcd7b211a",
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 8.116667,
+      "end_time_s": 8.133333,
+      "peak_time_s": 8.133333,
+      "start_frame": 487,
+      "end_frame": 488,
+      "peak_frame": 488,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.5020833333333333,
+        "y": 0.2111111111111111,
+        "w": 0.13541666666666666,
+        "h": 0.3074074074074074
+      },
+      "affected_area_ratio": 0.041628,
+      "description": "Region turned into the missing-texture colour",
+      "metrics": {
+        "magenta_fraction": 0.998
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "241f8506b4934059b6248bf1d0e66855",
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 11.266667,
+      "end_time_s": 11.283333,
+      "peak_time_s": 11.283333,
+      "start_frame": 676,
+      "end_frame": 677,
+      "peak_frame": 677,
+      "confidence": 0.577,
+      "bbox": {
+        "x": 0.8125,
+        "y": 0.040740740740740744,
+        "w": 0.1875,
+        "h": 0.06296296296296296
+      },
+      "affected_area_ratio": 0.011806,
+      "description": "Texture detail blurred suddenly (x2.33) with unchanged colour layout",
+      "metrics": {
+        "lowfreq_diff": 8.05,
+        "hf_before": 24.6,
+        "hf_after": 10.55,
+        "detail_ratio": 2.33,
+        "direction": "blurred",
+        "region_dssim": 0.147,
+        "frame_median_dssim": 0.002,
+        "align": "phase"
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "f6b6e1959b324b9bb7cbaf66e2d3d9f1",
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 13.283333,
+      "end_time_s": 13.3,
+      "peak_time_s": 13.3,
+      "start_frame": 797,
+      "end_frame": 798,
+      "peak_frame": 798,
+      "confidence": 0.99,
+      "bbox": {
+        "x": 0.53125,
+        "y": 0.3296296296296296,
+        "w": 0.29791666666666666,
+        "h": 0.17037037037037037
+      },
+      "affected_area_ratio": 0.050756,
+      "description": "Region turned into the missing-texture colour",
+      "metrics": {
+        "magenta_fraction": 0.49
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "6846329957664603ba72a38e67342720",
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 14.083333,
+      "end_time_s": 14.1,
+      "peak_time_s": 14.1,
+      "start_frame": 845,
+      "end_frame": 846,
+      "peak_frame": 846,
+      "confidence": 0.64,
+      "bbox": {
+        "x": 0.8125,
+        "y": 0.040740740740740744,
+        "w": 0.18125,
+        "h": 0.04814814814814815
+      },
+      "affected_area_ratio": 0.008727,
+      "description": "Texture detail blurred suddenly (x2.82) with unchanged colour layout",
+      "metrics": {
+        "lowfreq_diff": 8.55,
+        "hf_before": 28.41,
+        "hf_after": 10.08,
+        "detail_ratio": 2.82,
+        "direction": "blurred",
+        "region_dssim": 0.128,
+        "frame_median_dssim": 0.012,
+        "align": "phase"
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "7fe9344c44d34e968a565f82d3d46d86",
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "detector": "texture_pop_in",
+      "detector_version": "1.1",
+      "start_time_s": 15.966667,
+      "end_time_s": 15.983333,
+      "peak_time_s": 15.983333,
+      "start_frame": 958,
+      "end_frame": 959,
+      "peak_frame": 959,
+      "confidence": 0.999,
+      "bbox": {
+        "x": 0.65625,
+        "y": 0.40370370370370373,
+        "w": 0.2875,
+        "h": 0.32222222222222224
+      },
+      "affected_area_ratio": 0.092639,
+      "description": "Region turned into the missing-texture colour",
+      "metrics": {
+        "magenta_fraction": 0.499
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "video_id": "p3_v1game_vfr",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/v1game_vfr.mp4",
+  "duration_s": 18.5167,
+  "reviewed_categories": [
+    "fps_drop"
+  ],
+  "annotator": "injection script",
+  "source": "public: YouTube J8HB1-IQFxc gameplay 0-18.5 s",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 1.0,
+      "end_s": 1.4
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 7.1,
+      "end_s": 7.8
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 13.2,
+      "end_s": 14.7
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 15.5,
+      "end_s": 17.0
+    }
+  ]
+}

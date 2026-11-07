@@ -1,0 +1,12 @@
+{
+  "video_id": "p3_v1game_clean",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/v1game_clean.mp4",
+  "duration_s": 18.5167,
+  "reviewed_categories": [
+    "fps_drop"
+  ],
+  "annotator": "injection script",
+  "source": "public: YouTube J8HB1-IQFxc gameplay 0-18.5 s",
+  "synthetic": true,
+  "events": []
+}

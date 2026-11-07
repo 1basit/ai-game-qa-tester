@@ -1,0 +1,85 @@
+{
+  "video_id": "p4_v1game_s3",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase4/v1game_s3.mp4",
+  "duration_s": 18.5167,
+  "reviewed_categories": [
+    "texture_pop_in"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 3",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 8.13,
+      "end_s": 9.5,
+      "bbox": {
+        "x": 0.504,
+        "y": 0.215,
+        "w": 0.132,
+        "h": 0.302
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 15.98,
+      "end_s": 17.34,
+      "bbox": {
+        "x": 0.657,
+        "y": 0.405,
+        "w": 0.287,
+        "h": 0.321
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 13.29,
+      "end_s": 14.08,
+      "bbox": {
+        "x": 0.532,
+        "y": 0.33,
+        "w": 0.298,
+        "h": 0.168
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 3.7,
+      "end_s": 4.73,
+      "bbox": {
+        "x": 0.349,
+        "y": 0.168,
+        "w": 0.237,
+        "h": 0.327
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 1.18,
+      "end_s": 2.25,
+      "bbox": {
+        "x": 0.369,
+        "y": 0.386,
+        "w": 0.213,
+        "h": 0.32
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 5.75,
+      "end_s": 6.75,
+      "bbox": {
+        "x": 0.788,
+        "y": 0.636,
+        "w": 0.142,
+        "h": 0.164
+      }
+    }
+  ]
+}

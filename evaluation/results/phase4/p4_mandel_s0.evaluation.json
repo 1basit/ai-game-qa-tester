@@ -1,0 +1,154 @@
+{
+  "video_id": "p4_mandel_s0",
+  "synthetic": true,
+  "duration_s": 20.0,
+  "per_category": {
+    "texture_pop_in": {
+      "category": "texture_pop_in",
+      "n_predictions": 2,
+      "n_ground_truth": 11,
+      "tp": 2,
+      "fp": 0,
+      "fn": 9,
+      "precision": 1.0,
+      "recall": 0.18181818181818182,
+      "f1": 0.3076923076923077,
+      "fp_per_minute": 0.0,
+      "matches": [
+        {
+          "detection_id": "fb2b352fba7942de9c382924e8637010",
+          "gt_index": 2,
+          "tiou": 0.0094,
+          "peak_error_s": -0.52
+        },
+        {
+          "detection_id": "5f28d7b1eda4433fa5c1f6611b5c2438",
+          "gt_index": 9,
+          "tiou": 0.0,
+          "peak_error_s": -0.135
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 15.97,
+          "end_s": 16.12,
+          "bbox": {
+            "x": 0.119,
+            "y": 0.542,
+            "w": 0.298,
+            "h": 0.176
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 16.78,
+          "end_s": 16.93,
+          "bbox": {
+            "x": 0.119,
+            "y": 0.542,
+            "w": 0.298,
+            "h": 0.176
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 5.95,
+          "end_s": 6.1,
+          "bbox": {
+            "x": 0.266,
+            "y": 0.292,
+            "w": 0.271,
+            "h": 0.345
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 6.88,
+          "end_s": 7.03,
+          "bbox": {
+            "x": 0.266,
+            "y": 0.292,
+            "w": 0.271,
+            "h": 0.345
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 11.62,
+          "end_s": 11.77,
+          "bbox": {
+            "x": 0.646,
+            "y": 0.377,
+            "w": 0.252,
+            "h": 0.329
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 13.09,
+          "end_s": 13.24,
+          "bbox": {
+            "x": 0.646,
+            "y": 0.377,
+            "w": 0.252,
+            "h": 0.329
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 18.27,
+          "end_s": 18.42,
+          "bbox": {
+            "x": 0.459,
+            "y": 0.459,
+            "w": 0.201,
+            "h": 0.248
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 19.14,
+          "end_s": 19.29,
+          "bbox": {
+            "x": 0.459,
+            "y": 0.459,
+            "w": 0.201,
+            "h": 0.248
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 2.02,
+          "end_s": 2.17,
+          "bbox": {
+            "x": 0.468,
+            "y": 0.122,
+            "w": 0.283,
+            "h": 0.24
+          },
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "unscored_predictions": 0
+}

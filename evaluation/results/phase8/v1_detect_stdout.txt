@@ -1,0 +1,63 @@
+I0000 00:00:1794034667.108244   35966 init-domain.cc:133] Fiber init: default domain = pthread, concurrency = 8, prefix = pthread-default
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+W0000 00:00:1794034667.195771   35969 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1794034667.223097   35970 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1794034667.498431   35969 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+12:03:34 INFO    gameqa.pipeline: pipeline finished: 37 detections, status completed, 350.8s
+   4.350-   4.367s  animation_glitch   unnatural_transition conf 0.73  One-frame discontinuity: the image jumped and motion continued normally
+  14.083-  14.100s  texture_pop_in     texture_pop_in       conf 0.56  Texture detail blurred suddenly (x2.22) with unchanged colour layout
+  16.367-  16.400s  animation_glitch   jitter               conf 0.90  Motion reverses direction frame to frame
+  18.367-  19.417s  fps_drop           frozen_frame         conf 0.64  Picture held for 1050 ms while the scene was moving
+  19.583-  19.600s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+  19.617-  19.633s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+  20.233-  20.250s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+  20.500-  20.517s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+  20.783-  20.800s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+  28.883-  28.900s  animation_glitch   unnatural_transition conf 0.96  One-frame discontinuity: the image jumped and motion continued normally
+  42.450-  42.467s  animation_glitch   unnatural_transition conf 0.99  One-frame discontinuity: the image jumped and motion continued normally
+  42.500-  42.517s  texture_pop_in     texture_pop_in       conf 0.57  Texture detail blurred suddenly (x2.56) with unchanged colour layout
+  43.950-  43.967s  texture_pop_in     texture_pop_in       conf 0.58  Texture detail blurred suddenly (x2.59) with unchanged colour layout
+  45.933-  45.950s  texture_pop_in     texture_pop_in       conf 0.59  Texture detail sharpened suddenly (x2.66) with unchanged colour layout
+  51.400-  51.417s  texture_pop_in     texture_pop_in       conf 0.59  Texture detail blurred suddenly (x2.65) with unchanged colour layout
+  72.000-  72.017s  texture_pop_in     texture_pop_in       conf 0.69  Texture detail sharpened suddenly (x2.32) with unchanged colour layout
+  80.117-  80.133s  texture_pop_in     texture_pop_in       conf 0.60  Texture detail sharpened suddenly (x2.72) with unchanged colour layout
+  90.683-  90.700s  texture_pop_in     texture_pop_in       conf 0.58  Texture detail blurred suddenly (x2.58) with unchanged colour layout
+  94.500-  94.517s  texture_pop_in     texture_pop_in       conf 0.71  Texture detail sharpened suddenly (x2.53) with unchanged colour layout
+  96.633-  96.650s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 102.650- 102.667s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 105.117- 105.133s  animation_glitch   unnatural_transition conf 0.98  One-frame discontinuity: the image jumped and motion continued normally
+ 119.367- 119.383s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 122.983- 123.000s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 123.750- 123.767s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 179.383- 179.400s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 179.533- 179.550s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 179.917- 179.933s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 180.383- 180.400s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 182.150- 182.167s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 182.700- 182.717s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 184.417- 184.433s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 184.467- 184.483s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 186.833- 186.850s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 188.667- 188.683s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 191.683- 191.700s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+ 191.933- 191.950s  animation_glitch   unnatural_transition conf 1.00  One-frame discontinuity: the image jumped and motion continued normally
+
+37 detections, status completed, 350.8s (34 frames/s)
+fps_drop summary: {"recording_fps": 60.0, "target_fps": 60.0, "estimated_render_fps_median": 57.0, "estimated_render_fps_p10": 49.4, "measurable_fraction": 0.092, "missed_frames": 130, "note": "FPS can only be measured while the scene is moving; static stretches are excluded"}
+texture_pop_in summary: {"frames_analysed": 11955, "frames_skipped_unaligned_or_cut": 18, "skipped_fraction": 0.002}
+animation_glitch summary: {"frames": 11955}
+npc_anomaly summary: {"frames": 2391, "person_detections": 48, "poses": 5, "tracks": 7, "viewmodel_tracks_ignored": 4, "floating": "not implemented (no ground plane / depth in 2-D video)"}
+collision_clipping summary: {"frames": 2391, "moving_frames": 0, "cuts": 2, "frames_with_viewmodel": 0}
+Exception ignored in: <function PoseLandmarker.__del__ at 0x12d5cb7e0>
+Traceback (most recent call last):
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/vision/pose_landmarker.py", line 611, in __del__
+    self.close()
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/vision/pose_landmarker.py", line 586, in close
+    self._lib.MpPoseLandmarkerClose(self._handle)  # pyrefly: ignore[missing-attribute]
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/core/serial_dispatcher.py", line 74, in shutdown_aware_handler
+    return handler(*args, **kwargs)
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/core/mediapipe_c_utils.py", line 142, in dispatcher_wrapper
+    executor.submit(dispatch_and_free).result()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 171, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown

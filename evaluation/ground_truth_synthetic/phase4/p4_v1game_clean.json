@@ -1,0 +1,12 @@
+{
+  "video_id": "p4_v1game_clean",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase4/v1game_clean.mp4",
+  "duration_s": 18.5167,
+  "reviewed_categories": [
+    "texture_pop_in"
+  ],
+  "annotator": "injection script",
+  "source": "clean control",
+  "synthetic": true,
+  "events": []
+}

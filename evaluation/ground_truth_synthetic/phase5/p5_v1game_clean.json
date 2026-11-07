@@ -1,0 +1,24 @@
+{
+  "video_id": "p5_v1game_clean",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/v1game_clean.mp4",
+  "duration_s": 18.5167,
+  "reviewed_categories": [
+    "animation_glitch"
+  ],
+  "annotator": "injection script",
+  "source": "clean control",
+  "synthetic": true,
+  "events": [],
+  "ignore": [
+    {
+      "start_s": 4.25,
+      "end_s": 4.4667,
+      "reason": "video-editing cut (tutorial clip boundary)"
+    },
+    {
+      "start_s": 10.7833,
+      "end_s": 11.0167,
+      "reason": "one-frame jump: cut or real hitch, ambiguous"
+    }
+  ]
+}

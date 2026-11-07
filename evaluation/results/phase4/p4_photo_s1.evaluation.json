@@ -1,0 +1,100 @@
+{
+  "video_id": "p4_photo_s1",
+  "synthetic": true,
+  "duration_s": 20.0,
+  "per_category": {
+    "texture_pop_in": {
+      "category": "texture_pop_in",
+      "n_predictions": 6,
+      "n_ground_truth": 9,
+      "tp": 6,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "fp_per_minute": 0.0,
+      "matches": [
+        {
+          "detection_id": "29171bd20ed44504b33ad32a54448420",
+          "gt_index": 2,
+          "tiou": 0.1111,
+          "peak_error_s": -0.0183
+        },
+        {
+          "detection_id": "60663b75c327428ab32461734b8a14fb",
+          "gt_index": 6,
+          "tiou": 0.1111,
+          "peak_error_s": -0.0183
+        },
+        {
+          "detection_id": "1058ede9eb8041308be52f3c7d120365",
+          "gt_index": 4,
+          "tiou": 0.1111,
+          "peak_error_s": -0.0117
+        },
+        {
+          "detection_id": "a4d8405013ac4d27976bb448fad73a76",
+          "gt_index": 8,
+          "tiou": 0.0204,
+          "peak_error_s": -0.3117
+        },
+        {
+          "detection_id": "0304730b681c465f94fdc26bd7671503",
+          "gt_index": 1,
+          "tiou": 0.0023,
+          "peak_error_s": -0.7017
+        },
+        {
+          "detection_id": "5445f07740df465187816cd911fa7bd9",
+          "gt_index": 0,
+          "tiou": 0.0,
+          "peak_error_s": -0.71
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 2.33,
+          "end_s": 2.48,
+          "bbox": {
+            "x": 0.145,
+            "y": 0.542,
+            "w": 0.277,
+            "h": 0.259
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 10.34,
+          "end_s": 10.49,
+          "bbox": {
+            "x": 0.341,
+            "y": 0.246,
+            "w": 0.212,
+            "h": 0.299
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 5.02,
+          "end_s": 5.17,
+          "bbox": {
+            "x": 0.295,
+            "y": 0.437,
+            "w": 0.29,
+            "h": 0.288
+          },
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "unscored_predictions": 0
+}

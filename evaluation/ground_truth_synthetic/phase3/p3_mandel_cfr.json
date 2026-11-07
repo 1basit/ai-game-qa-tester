@@ -1,0 +1,49 @@
+{
+  "video_id": "p3_mandel_cfr",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/mandel_cfr.mp4",
+  "duration_s": 20.0,
+  "reviewed_categories": [
+    "fps_drop"
+  ],
+  "annotator": "injection script",
+  "source": "generated: ffmpeg mandelbrot zoom",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 2.0,
+      "end_s": 2.3
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 5.0,
+      "end_s": 6.5
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 9.0,
+      "end_s": 9.6
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 12.0,
+      "end_s": 13.5
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "frozen_frame",
+      "start_s": 15.0,
+      "end_s": 16.0
+    },
+    {
+      "category": "fps_drop",
+      "subtype": "fps_drop",
+      "start_s": 17.0,
+      "end_s": 18.5
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "video_id": "p4_mandel_s1",
+  "synthetic": true,
+  "duration_s": 20.0,
+  "per_category": {
+    "texture_pop_in": {
+      "category": "texture_pop_in",
+      "n_predictions": 4,
+      "n_ground_truth": 9,
+      "tp": 3,
+      "fp": 1,
+      "fn": 6,
+      "precision": 0.75,
+      "recall": 0.3333333333333333,
+      "f1": 0.46153846153846156,
+      "fp_per_minute": 3.0,
+      "matches": [
+        {
+          "detection_id": "5a05c506f75c43e68f6a24d1a9abfefc",
+          "gt_index": 7,
+          "tiou": 0.004,
+          "peak_error_s": -0.4017
+        },
+        {
+          "detection_id": "444f2d90ac2448c2bdbce06205ee0acc",
+          "gt_index": 4,
+          "tiou": 0.0035,
+          "peak_error_s": -0.4617
+        },
+        {
+          "detection_id": "419013a84dc54b7cb43abefb31259c0e",
+          "gt_index": 8,
+          "tiou": 0.0035,
+          "peak_error_s": -0.4667
+        }
+      ],
+      "false_positives": [
+        {
+          "detection_id": "d2db02ffefb74931beeac8bbf9e904d6",
+          "subtype": "texture_pop_in",
+          "start_s": 1.233333,
+          "end_s": 1.25,
+          "peak_s": 1.25,
+          "confidence": 0.902
+        }
+      ],
+      "false_negatives": [
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 4.35,
+          "end_s": 4.5,
+          "bbox": {
+            "x": 0.448,
+            "y": 0.511,
+            "w": 0.248,
+            "h": 0.217
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 5.82,
+          "end_s": 5.97,
+          "bbox": {
+            "x": 0.448,
+            "y": 0.511,
+            "w": 0.248,
+            "h": 0.217
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 2.07,
+          "end_s": 2.22,
+          "bbox": {
+            "x": 0.451,
+            "y": 0.156,
+            "w": 0.174,
+            "h": 0.21
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 3.03,
+          "end_s": 3.18,
+          "bbox": {
+            "x": 0.451,
+            "y": 0.156,
+            "w": 0.174,
+            "h": 0.21
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 11.67,
+          "end_s": 11.82,
+          "bbox": {
+            "x": 0.616,
+            "y": 0.253,
+            "w": 0.273,
+            "h": 0.338
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 12.61,
+          "end_s": 12.76,
+          "bbox": {
+            "x": 0.616,
+            "y": 0.253,
+            "w": 0.273,
+            "h": 0.338
+          },
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "unscored_predictions": 0
+}

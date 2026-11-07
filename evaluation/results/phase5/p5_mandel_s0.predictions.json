@@ -1,0 +1,150 @@
+{
+  "video_id": "p5_mandel_s0",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/mandel_s0.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 968,
+    "duration_s": 16.1333,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 96232400,
+    "fingerprint": "f50734161ed7071cfbc3bab84ed87d1f64e661a2488fec0cdc6b2de47185782c",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 967,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 968,
+    "declared_duration_s": 16.1333,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-06T22:44:34.165249Z",
+  "detections": [
+    {
+      "id": "b11d38666c7e413998eec54e36e508e7",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 1.45,
+      "end_time_s": 2.133333,
+      "peak_time_s": 1.5,
+      "start_frame": 87,
+      "end_frame": 128,
+      "peak_frame": 90,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.25,
+        "y": 0.2222222222222222,
+        "w": 0.3125,
+        "h": 0.2222222222222222
+      },
+      "affected_area_ratio": 0.069444,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.683,
+        "frames": 42,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "950fa08b205b48fc825acc90740e81c8",
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 5.133333,
+      "end_time_s": 5.15,
+      "peak_time_s": 5.15,
+      "start_frame": 308,
+      "end_frame": 309,
+      "peak_frame": 309,
+      "confidence": 0.65,
+      "bbox": null,
+      "affected_area_ratio": 1.0,
+      "description": "One-frame discontinuity: the image jumped and motion continued normally",
+      "metrics": {
+        "change": 24.23,
+        "recent_median_change": 3.87
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "ffb007a328ea475fbf756f72d2ad895a",
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 8.716667,
+      "end_time_s": 8.733333,
+      "peak_time_s": 8.733333,
+      "start_frame": 523,
+      "end_frame": 524,
+      "peak_frame": 524,
+      "confidence": 0.674,
+      "bbox": null,
+      "affected_area_ratio": 1.0,
+      "description": "One-frame discontinuity: the image jumped and motion continued normally",
+      "metrics": {
+        "change": 36.17,
+        "recent_median_change": 5.28
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "85597619805a45c18ff5641cb6097536",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 13.516667,
+      "end_time_s": 14.216667,
+      "peak_time_s": 13.55,
+      "start_frame": 811,
+      "end_frame": 853,
+      "peak_frame": 813,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.5625,
+        "y": 0.2222222222222222,
+        "w": 0.1875,
+        "h": 0.2222222222222222
+      },
+      "affected_area_ratio": 0.041667,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.7,
+        "frames": 43,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

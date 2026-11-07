@@ -1,0 +1,37 @@
+{
+  "video_id": "v1_unity_clipping_tutorial",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/videos/YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hands-Clipping-Into-Walls-in-Unity-URP-SRP_001_1080p.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps_nominal": 60.0,
+    "frame_count": 11955,
+    "duration_s": 199.25,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 23784106,
+    "fingerprint": "8a645b950aef2d59ae5f5f4fc72972fdf1bd86f2c50788e30b32ad6b7290aedb",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": "bt709",
+    "is_hdr": false,
+    "has_audio": true,
+    "timing": {
+      "n_intervals": 11954,
+      "median_interval_s": 0.01666699999999821,
+      "min_interval_s": 0.016665999999986525,
+      "max_interval_s": 0.016667000000012422,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 11955,
+    "declared_duration_s": 199.25,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-06T23:10:05.538174Z",
+  "detections": []
+}

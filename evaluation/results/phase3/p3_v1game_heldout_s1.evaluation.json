@@ -1,0 +1,48 @@
+{
+  "video_id": "p3_v1game_heldout_s1",
+  "synthetic": true,
+  "duration_s": 18.5167,
+  "per_category": {
+    "fps_drop": {
+      "category": "fps_drop",
+      "n_predictions": 4,
+      "n_ground_truth": 4,
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "fp_per_minute": 0.0,
+      "matches": [
+        {
+          "detection_id": "5cb2c4e591c548c3bfb7c2ef5225c0fa",
+          "gt_index": 2,
+          "tiou": 1.0,
+          "peak_error_s": -0.55
+        },
+        {
+          "detection_id": "f567065fb4424fa1a94861a04204e9ba",
+          "gt_index": 0,
+          "tiou": 0.8,
+          "peak_error_s": -0.18
+        },
+        {
+          "detection_id": "357dfc95464e4497918432850f5edb53",
+          "gt_index": 1,
+          "tiou": 0.6533,
+          "peak_error_s": -0.265
+        },
+        {
+          "detection_id": "e6318cc55feb4b288a5084897bdff2bf",
+          "gt_index": 3,
+          "tiou": 0.5,
+          "peak_error_s": 0.04
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": []
+    }
+  },
+  "unscored_predictions": 0
+}

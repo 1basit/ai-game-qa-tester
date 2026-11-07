@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gameqa"
+version = "0.1.0"
+description = "AI Game QA Tester: automated game bug detection and reporting from gameplay video"
+readme = "../README.md"
+requires-python = ">=3.10"
+# Core dependencies only. Each later phase adds its own dependency group after it has
+# been installed and tested on the project machine (see docs/ROADMAP.md).
+dependencies = [
+    "numpy>=2.0",
+    # OpenCV 4.x (SRS). The contrib/headless build is used because ultralytics and mediapipe
+    # each pull a different OpenCV wheel that overwrite each other: see scripts/install.sh
+    "opencv-contrib-python-headless>=4.10,<5",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "pyyaml>=6.0",
+    "scikit-image>=0.24",            # SSIM (texture pop-in)
+]
+
+[project.optional-dependencies]
+ml = ["ultralytics>=8.3", "mediapipe>=0.10.14"]          # NPC + person overlap (YOLOv8, PoseLandmarker)
+api = ["fastapi>=0.115", "uvicorn[standard]>=0.30", "sqlalchemy>=2.0", "psycopg[binary]>=3.2",
+       "python-multipart>=0.0.9", "bcrypt>=4.1", "pyjwt>=2.8", "reportlab>=4.2"]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[project.scripts]
+gameqa = "gameqa.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

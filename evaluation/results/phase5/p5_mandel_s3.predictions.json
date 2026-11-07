@@ -1,0 +1,162 @@
+{
+  "video_id": "p5_mandel_s3",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/mandel_s3.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 1100,
+    "duration_s": 18.3333,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 54954346,
+    "fingerprint": "67a58d3bc913b62fe265bc81ef0e755a79973b930d0497a2e47e5853bd023c4c",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 1099,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 1100,
+    "declared_duration_s": 18.3333,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-07T06:53:45.115486Z",
+  "detections": [
+    {
+      "id": "d9690abd52274bfaad210ced9aa442ed",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 7.883333,
+      "end_time_s": 8.633333,
+      "peak_time_s": 7.933333,
+      "start_frame": 473,
+      "end_frame": 518,
+      "peak_frame": 476,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.5625,
+        "y": 0.3333333333333333,
+        "w": 0.1875,
+        "h": 0.4444444444444444
+      },
+      "affected_area_ratio": 0.083333,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.75,
+        "frames": 46,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "c24bb724009c4169a19c93b2ff3c0c1d",
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 10.333333,
+      "end_time_s": 10.883333,
+      "peak_time_s": 10.383333,
+      "start_frame": 620,
+      "end_frame": 653,
+      "peak_frame": 623,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.6875,
+        "y": 0.2222222222222222,
+        "w": 0.1875,
+        "h": 0.3333333333333333
+      },
+      "affected_area_ratio": 0.0625,
+      "description": "Region brightness alternates frame to frame",
+      "metrics": {
+        "duration_s": 0.55,
+        "frames": 34,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "4142f91fb8b9444ea5680220f79be5ff",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 13.766667,
+      "end_time_s": 14.383333,
+      "peak_time_s": 13.8,
+      "start_frame": 826,
+      "end_frame": 863,
+      "peak_frame": 828,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "affected_area_ratio": 1.0,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.617,
+        "frames": 38,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "00fa94b258e943f8b3910128f843e359",
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 16.2,
+      "end_time_s": 16.816667,
+      "peak_time_s": 16.233333,
+      "start_frame": 972,
+      "end_frame": 1009,
+      "peak_frame": 974,
+      "confidence": 1.0,
+      "bbox": {
+        "x": 0.625,
+        "y": 0.2222222222222222,
+        "w": 0.1875,
+        "h": 0.2222222222222222
+      },
+      "affected_area_ratio": 0.041667,
+      "description": "Motion reverses direction frame to frame",
+      "metrics": {
+        "duration_s": 0.617,
+        "frames": 34,
+        "alternation_score": 1.0
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

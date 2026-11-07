@@ -1,0 +1,62 @@
+# AI Game QA Tester — default configuration.
+# Override any value with an environment variable: GAMEQA_<SECTION>__<FIELD>
+#   e.g.  GAMEQA_VIDEO__ANALYSIS_FPS=15   GAMEQA_LOGGING__LEVEL=DEBUG
+# Thresholds marked "uncalibrated" are starting points only; each is tuned against
+# labelled footage in its detector phase and the measured values recorded in
+# DEVELOPMENT_PROGRESS.md.
+
+device: auto            # auto -> cuda, then mps (Apple Silicon), then cpu
+
+paths:                  # relative paths are resolved against the project root
+  data_dir: data
+  uploads_dir: data/uploads
+  evidence_dir: data/evidence
+  models_dir: data/models
+  logs_dir: data/logs
+  evaluation_dir: evaluation
+
+video:
+  allowed_extensions: [".mp4", ".avi", ".mkv"]   # FR-1
+  max_upload_mb: 2048                             # SRS 5.3.1
+  analysis_fps: 12                                # FR-2: sub-sampled stream, 10-15 FPS
+  normalized_height: 720                          # detector input resolution (aspect kept)
+
+# Global persistence rule (FR-3). Detectors may override it below. Uncalibrated.
+persistence:
+  min_frames: 3
+  min_duration_s: 0.2
+  max_gap_s: 0.25
+
+# Detector registry names. Parameters are added and calibrated in each detector phase.
+detectors:
+  fps_drop:          { enabled: true }
+  texture_pop_in:    { enabled: true }
+  animation_glitch:  { enabled: true }
+  npc_anomaly:       { enabled: true }
+  collision_clipping: { enabled: true }
+
+evidence:
+  clip_duration_s: 8          # FR-4: 5-10 s
+  screenshot_format: png
+
+# FR-5 severity rules (see backend/src/gameqa/severity.py). Category gives the starting
+# band (SRS: clipping / severe performance = High, gameplay-affecting = Medium, visual = Low);
+# these thresholds raise it. Not calibrated against human ratings (none available).
+severity:
+  large_area: 0.25          # share of the frame
+  long_s: 2.0
+  recurrent_count: 3
+  severe_freeze_s: 1.0
+  severe_drop_ratio: 0.5    # effective FPS below 50 % of target
+  severe_drop_s: 3.0
+  group_iou: 0.3            # same place on screen -> same recurring defect
+
+evaluation:
+  iou_threshold: 0.3          # temporal IoU needed to count a prediction as a match
+  peak_tolerance_s: 0.5       # ...or its peak lies within GT interval +/- this tolerance
+  match_subtype: false        # true = subtype must also match
+
+logging:
+  level: INFO
+  json_format: false
+  to_file: true

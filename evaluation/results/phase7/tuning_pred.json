@@ -1,0 +1,98 @@
+{
+  "video_id": "v1_clip_tuning",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/videos/YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hands-Clipping-Into-Walls-in-Unity-URP-SRP_001_1080p.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps_nominal": 60.0,
+    "frame_count": 11955,
+    "duration_s": 199.25,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 23784106,
+    "fingerprint": "8a645b950aef2d59ae5f5f4fc72972fdf1bd86f2c50788e30b32ad6b7290aedb",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": "bt709",
+    "is_hdr": false,
+    "has_audio": true,
+    "timing": {
+      "n_intervals": 11954,
+      "median_interval_s": 0.01666699999999821,
+      "min_interval_s": 0.016665999999986525,
+      "max_interval_s": 0.016667000000012422,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 11955,
+    "declared_duration_s": 199.25,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-07T06:50:57.114972Z",
+  "detections": [
+    {
+      "id": "973ed07443d44cc19ef778de65dfc533",
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "detector": "collision_clipping",
+      "detector_version": "1.1",
+      "start_time_s": 2.083333,
+      "end_time_s": 2.333333,
+      "peak_time_s": 2.166667,
+      "start_frame": 125,
+      "end_frame": 140,
+      "peak_frame": 130,
+      "confidence": 0.622,
+      "bbox": {
+        "x": 0.5541666666666667,
+        "y": 0.6111111111111112,
+        "w": 0.014583333333333334,
+        "h": 0.044444444444444446
+      },
+      "affected_area_ratio": 0.000648,
+      "description": "First-person weapon/hands passing into geometry: the far end of the viewmodel is hidden while the rest of it is visible",
+      "metrics": {
+        "duration_s": 0.25,
+        "frames": 4
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    },
+    {
+      "id": "5682ed49ec7e434abebb508ec5522b91",
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "detector": "collision_clipping",
+      "detector_version": "1.1",
+      "start_time_s": 2.916667,
+      "end_time_s": 4.333333,
+      "peak_time_s": 3.75,
+      "start_frame": 175,
+      "end_frame": 260,
+      "peak_frame": 225,
+      "confidence": 0.615,
+      "bbox": {
+        "x": 0.5833333333333334,
+        "y": 0.6259259259259259,
+        "w": 0.01875,
+        "h": 0.025925925925925925
+      },
+      "affected_area_ratio": 0.000486,
+      "description": "First-person weapon/hands passing into geometry: the far end of the viewmodel is hidden while the rest of it is visible",
+      "metrics": {
+        "duration_s": 1.42,
+        "frames": 15
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

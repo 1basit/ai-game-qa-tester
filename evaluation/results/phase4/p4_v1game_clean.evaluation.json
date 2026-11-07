@@ -1,0 +1,23 @@
+{
+  "video_id": "p4_v1game_clean",
+  "synthetic": true,
+  "duration_s": 18.5167,
+  "per_category": {
+    "texture_pop_in": {
+      "category": "texture_pop_in",
+      "n_predictions": 0,
+      "n_ground_truth": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "fp_per_minute": 0.0,
+      "matches": [],
+      "false_positives": [],
+      "false_negatives": []
+    }
+  },
+  "unscored_predictions": 0
+}

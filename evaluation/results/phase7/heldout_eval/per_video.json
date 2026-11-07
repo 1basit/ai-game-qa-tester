@@ -1,0 +1,79 @@
+[
+  {
+    "video_id": "v1_clip_heldout",
+    "synthetic": false,
+    "duration_s": 199.25,
+    "per_category": {
+      "collision_clipping": {
+        "category": "collision_clipping",
+        "n_predictions": 4,
+        "n_ground_truth": 6,
+        "tp": 3,
+        "fp": 1,
+        "fn": 3,
+        "precision": 0.75,
+        "recall": 0.5,
+        "f1": 0.6,
+        "fp_per_minute": 0.30112923462986196,
+        "matches": [
+          {
+            "detection_id": "f91dc00a1f2c43f7a7a75628f45be886",
+            "gt_index": 1,
+            "tiou": 0.5706,
+            "peak_error_s": 0.7817
+          },
+          {
+            "detection_id": "9a6f4d5f529244a186841a88a5311d42",
+            "gt_index": 0,
+            "tiou": 0.4544,
+            "peak_error_s": 0.9933
+          },
+          {
+            "detection_id": "4cf75437ce1345cab59626a41d80419c",
+            "gt_index": 5,
+            "tiou": 0.3703,
+            "peak_error_s": -0.6433
+          }
+        ],
+        "false_positives": [
+          {
+            "detection_id": "edb5d38b60074e05b11b232ed7b851a7",
+            "subtype": "character_geometry",
+            "start_s": 12.833333,
+            "end_s": 15.416667,
+            "peak_s": 13.833333,
+            "confidence": 0.721
+          }
+        ],
+        "false_negatives": [
+          {
+            "category": "collision_clipping",
+            "subtype": "character_geometry",
+            "start_s": 16.6,
+            "end_s": 17.17,
+            "bbox": null,
+            "notes": "clip 3: front sight hidden"
+          },
+          {
+            "category": "collision_clipping",
+            "subtype": "character_geometry",
+            "start_s": 17.6,
+            "end_s": 17.68,
+            "bbox": null,
+            "notes": "clip 3: front sight hidden (brief)"
+          },
+          {
+            "category": "collision_clipping",
+            "subtype": "character_geometry",
+            "start_s": 17.78,
+            "end_s": 17.84,
+            "bbox": null,
+            "notes": "clip 3: front sight hidden (brief, single sampled frame)"
+          }
+        ]
+      }
+    },
+    "unscored_predictions": 0,
+    "ignored_predictions": 2
+  }
+]

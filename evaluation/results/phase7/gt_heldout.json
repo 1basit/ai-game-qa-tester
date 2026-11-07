@@ -1,0 +1,82 @@
+{
+  "video_id": "v1_clip_heldout",
+  "video_file": "evaluation/videos/YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hands-Clipping-Into-Walls-in-Unity-URP-SRP_001_1080p.mp4",
+  "duration_s": 199.25,
+  "reviewed_categories": [
+    "collision_clipping"
+  ],
+  "annotator": "Claude (frame-by-frame inspection at 12 FPS of the muzzle/front-sight region, 2026-11-07) - NEEDS CONFIRMATION BY A TEAM MEMBER",
+  "source": "public: YouTube J8HB1-IQFxc",
+  "synthetic": false,
+  "events": [
+    {
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "start_s": 7.9,
+      "end_s": 9.28,
+      "notes": "clip 3: front sight hidden while pressed to the wall"
+    },
+    {
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "start_s": 10.3,
+      "end_s": 11.47,
+      "notes": "clip 3: front sight hidden (boundary uncertain +/-0.1 s)"
+    },
+    {
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "start_s": 16.6,
+      "end_s": 17.17,
+      "notes": "clip 3: front sight hidden"
+    },
+    {
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "start_s": 17.6,
+      "end_s": 17.68,
+      "notes": "clip 3: front sight hidden (brief)"
+    },
+    {
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "start_s": 17.78,
+      "end_s": 17.84,
+      "notes": "clip 3: front sight hidden (brief, single sampled frame)"
+    },
+    {
+      "category": "collision_clipping",
+      "subtype": "character_geometry",
+      "start_s": 18.02,
+      "end_s": 19.1,
+      "notes": "clip 3: front sight hidden until the end of gameplay"
+    }
+  ],
+  "ignore": [
+    {
+      "start_s": 19.2,
+      "end_s": 199.25,
+      "reason": "Unity Editor screen recording / end card: not gameplay"
+    },
+    {
+      "start_s": 4.3,
+      "end_s": 4.45,
+      "reason": "video-editing cut"
+    },
+    {
+      "start_s": 7.55,
+      "end_s": 7.62,
+      "reason": "video-editing cut between clip 2 and clip 3"
+    },
+    {
+      "start_s": 0.0,
+      "end_s": 7.62,
+      "reason": "tuning part (clips 1-2)"
+    },
+    {
+      "start_s": 19.2,
+      "end_s": 199.25,
+      "reason": "Unity Editor / end card: not gameplay"
+    }
+  ]
+}

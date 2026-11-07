@@ -1,0 +1,97 @@
+{
+  "video_id": "p4_photo_s3",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase4/photo_s3.mp4",
+  "duration_s": 20.0,
+  "reviewed_categories": [
+    "texture_pop_in"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 3",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 16.94,
+      "end_s": 18.0,
+      "bbox": {
+        "x": 0.743,
+        "y": 0.334,
+        "w": 0.147,
+        "h": 0.224
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 13.65,
+      "end_s": 14.22,
+      "bbox": {
+        "x": 0.361,
+        "y": 0.228,
+        "w": 0.22,
+        "h": 0.279
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 5.0,
+      "end_s": 6.0,
+      "bbox": {
+        "x": 0.324,
+        "y": 0.614,
+        "w": 0.185,
+        "h": 0.203
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 8.68,
+      "end_s": 8.83,
+      "bbox": {
+        "x": 0.067,
+        "y": 0.326,
+        "w": 0.158,
+        "h": 0.248
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 9.62,
+      "end_s": 9.77,
+      "bbox": {
+        "x": 0.067,
+        "y": 0.326,
+        "w": 0.158,
+        "h": 0.248
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 0.95,
+      "end_s": 1.1,
+      "bbox": {
+        "x": 0.285,
+        "y": 0.605,
+        "w": 0.265,
+        "h": 0.202
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 1.61,
+      "end_s": 1.76,
+      "bbox": {
+        "x": 0.285,
+        "y": 0.605,
+        "w": 0.265,
+        "h": 0.202
+      }
+    }
+  ]
+}

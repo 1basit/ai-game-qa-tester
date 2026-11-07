@@ -1,0 +1,74 @@
+{
+  "video_id": "p5_mandel_s1",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/mandel_s1.mp4",
+  "duration_s": 20.0,
+  "reviewed_categories": [
+    "animation_glitch"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 1",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "start_s": 7.61,
+      "end_s": 8.35,
+      "bbox": {
+        "x": 0.134,
+        "y": 0.458,
+        "w": 0.247,
+        "h": 0.323
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "start_s": 13.38,
+      "end_s": 13.77,
+      "bbox": {
+        "x": 0.668,
+        "y": 0.409,
+        "w": 0.282,
+        "h": 0.349
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 15.62,
+      "end_s": 16.2
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "start_s": 2.76,
+      "end_s": 3.18,
+      "bbox": {
+        "x": 0.639,
+        "y": 0.482,
+        "w": 0.31,
+        "h": 0.258
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "start_s": 10.56,
+      "end_s": 11.14,
+      "bbox": {
+        "x": 0.143,
+        "y": 0.136,
+        "w": 0.219,
+        "h": 0.283
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 0.88,
+      "end_s": 1.28
+    }
+  ],
+  "ignore": []
+}

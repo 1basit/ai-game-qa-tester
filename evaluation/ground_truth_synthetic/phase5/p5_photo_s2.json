@@ -1,0 +1,68 @@
+{
+  "video_id": "p5_photo_s2",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/photo_s2.mp4",
+  "duration_s": 18.7,
+  "reviewed_categories": [
+    "animation_glitch"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 2",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 11.11,
+      "end_s": 11.79
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 2.57,
+      "end_s": 3.54,
+      "bbox": {
+        "x": 0.372,
+        "y": 0.159,
+        "w": 0.224,
+        "h": 0.35
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "flicker",
+      "start_s": 17.28,
+      "end_s": 18.27,
+      "bbox": {
+        "x": 0.543,
+        "y": 0.578,
+        "w": 0.228,
+        "h": 0.322
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "start_s": 1.17,
+      "end_s": 1.27
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 8.46,
+      "end_s": 9.12,
+      "bbox": {
+        "x": 0.293,
+        "y": 0.086,
+        "w": 0.344,
+        "h": 0.396
+      }
+    },
+    {
+      "category": "animation_glitch",
+      "subtype": "jitter",
+      "start_s": 15.52,
+      "end_s": 16.15
+    }
+  ],
+  "ignore": []
+}

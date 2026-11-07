@@ -1,0 +1,14 @@
+{
+  "collision_clipping": {
+    "category": "collision_clipping",
+    "videos": 1,
+    "tp": 3,
+    "fp": 1,
+    "fn": 3,
+    "precision": 0.75,
+    "recall": 0.5,
+    "f1": 0.6,
+    "total_minutes": 3.3208333333333333,
+    "fp_per_minute": 0.30112923462986196
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "status": "completed",
+  "wall_s": 350.804,
+  "throughput_fps": 34.1,
+  "realtime_factor": 0.568,
+  "warnings": [],
+  "detectors": [
+    {
+      "name": "fps_drop",
+      "version": "1.0",
+      "frames_processed": 11955,
+      "seconds": 12.40774050600237,
+      "detections": 1,
+      "error": null,
+      "summary": {
+        "recording_fps": 60.0,
+        "target_fps": 60.0,
+        "estimated_render_fps_median": 57.0,
+        "estimated_render_fps_p10": 49.4,
+        "measurable_fraction": 0.092,
+        "missed_frames": 130,
+        "note": "FPS can only be measured while the scene is moving; static stretches are excluded"
+      }
+    },
+    {
+      "name": "texture_pop_in",
+      "version": "1.1",
+      "frames_processed": 11955,
+      "seconds": 129.87056024199603,
+      "detections": 9,
+      "error": null,
+      "summary": {
+        "frames_analysed": 11955,
+        "frames_skipped_unaligned_or_cut": 18,
+        "skipped_fraction": 0.002
+      }
+    },
+    {
+      "name": "animation_glitch",
+      "version": "1.0",
+      "frames_processed": 11955,
+      "seconds": 106.88594483598865,
+      "detections": 27,
+      "error": null,
+      "summary": {
+        "frames": 11955
+      }
+    },
+    {
+      "name": "npc_anomaly",
+      "version": "1.0",
+      "frames_processed": 2391,
+      "seconds": 72.14648330400257,
+      "detections": 0,
+      "error": null,
+      "summary": {
+        "frames": 2391,
+        "person_detections": 48,
+        "poses": 5,
+        "tracks": 7,
+        "viewmodel_tracks_ignored": 4,
+        "floating": "not implemented (no ground plane / depth in 2-D video)"
+      }
+    },
+    {
+      "name": "collision_clipping",
+      "version": "1.2",
+      "frames_processed": 2391,
+      "seconds": 16.565352955998378,
+      "detections": 0,
+      "error": null,
+      "summary": {
+        "frames": 2391,
+        "moving_frames": 0,
+        "cuts": 2,
+        "frames_with_viewmodel": 0
+      }
+    }
+  ],
+  "stream": {
+    "frames_decoded": 11955,
+    "frames_sampled": 2391,
+    "expected_frames": 11955,
+    "first_timestamp_s": 0.0,
+    "last_timestamp_s": 199.23333333333332,
+    "decode_s": 12.317682143003367,
+    "normalise_s": 54.30952577199969,
+    "wall_s": 350.608525417,
+    "timestamp_mismatches": 0,
+    "truncated": false,
+    "output_size": [
+      1280,
+      720
+    ],
+    "video_seconds": 199.2333,
+    "realtime_factor": 0.568
+  }
+}

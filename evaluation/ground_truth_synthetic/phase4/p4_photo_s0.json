@@ -1,0 +1,121 @@
+{
+  "video_id": "p4_photo_s0",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase4/photo_s0.mp4",
+  "duration_s": 20.0,
+  "reviewed_categories": [
+    "texture_pop_in"
+  ],
+  "annotator": "injection script",
+  "source": "random injection seed 0",
+  "synthetic": true,
+  "events": [
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 3.24,
+      "end_s": 3.39,
+      "bbox": {
+        "x": 0.139,
+        "y": 0.18,
+        "w": 0.291,
+        "h": 0.193
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 4.29,
+      "end_s": 4.44,
+      "bbox": {
+        "x": 0.139,
+        "y": 0.18,
+        "w": 0.291,
+        "h": 0.193
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 9.18,
+      "end_s": 9.33,
+      "bbox": {
+        "x": 0.139,
+        "y": 0.254,
+        "w": 0.298,
+        "h": 0.347
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 10.56,
+      "end_s": 10.71,
+      "bbox": {
+        "x": 0.139,
+        "y": 0.254,
+        "w": 0.298,
+        "h": 0.347
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 16.03,
+      "end_s": 16.55,
+      "bbox": {
+        "x": 0.08,
+        "y": 0.168,
+        "w": 0.135,
+        "h": 0.324
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 0.95,
+      "end_s": 2.23,
+      "bbox": {
+        "x": 0.384,
+        "y": 0.368,
+        "w": 0.183,
+        "h": 0.157
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "unrendered_texture",
+      "start_s": 13.01,
+      "end_s": 13.63,
+      "bbox": {
+        "x": 0.34,
+        "y": 0.415,
+        "w": 0.279,
+        "h": 0.272
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 5.77,
+      "end_s": 5.92,
+      "bbox": {
+        "x": 0.143,
+        "y": 0.541,
+        "w": 0.182,
+        "h": 0.342
+      }
+    },
+    {
+      "category": "texture_pop_in",
+      "subtype": "texture_pop_in",
+      "start_s": 6.74,
+      "end_s": 6.89,
+      "bbox": {
+        "x": 0.143,
+        "y": 0.541,
+        "w": 0.182,
+        "h": 0.342
+      }
+    }
+  ]
+}

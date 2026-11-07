@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Runtime data: uploads, evidence, logs, model weights
+data/
+
+# Evaluation footage is large and may be licence-restricted; labels and results are tracked
+evaluation/videos/
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# Frontend (Phase 12)
+node_modules/
+frontend/dist/
+
+# Secrets / local config
+.env
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+~$*.docx

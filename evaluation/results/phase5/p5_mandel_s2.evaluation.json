@@ -1,0 +1,71 @@
+{
+  "video_id": "p5_mandel_s2",
+  "synthetic": true,
+  "duration_s": 19.05,
+  "per_category": {
+    "animation_glitch": {
+      "category": "animation_glitch",
+      "n_predictions": 4,
+      "n_ground_truth": 6,
+      "tp": 4,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8,
+      "fp_per_minute": 0.0,
+      "matches": [
+        {
+          "detection_id": "66b09a42f81f4391924b355906e9f3fe",
+          "gt_index": 5,
+          "tiou": 0.8625,
+          "peak_error_s": -0.3333
+        },
+        {
+          "detection_id": "8174c49a4a1d4ed2acde76c25652d8e1",
+          "gt_index": 2,
+          "tiou": 0.8246,
+          "peak_error_s": -0.205
+        },
+        {
+          "detection_id": "fc81c0f7329e4a97bf73b1925e025802",
+          "gt_index": 3,
+          "tiou": 0.799,
+          "peak_error_s": -0.175
+        },
+        {
+          "detection_id": "258559442bd64b5780c5e399a5717cd8",
+          "gt_index": 1,
+          "tiou": 0.7771,
+          "peak_error_s": -0.1433
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "category": "animation_glitch",
+          "subtype": "jitter",
+          "start_s": 13.93,
+          "end_s": 14.31,
+          "bbox": {
+            "x": 0.661,
+            "y": 0.648,
+            "w": 0.224,
+            "h": 0.168
+          },
+          "notes": ""
+        },
+        {
+          "category": "animation_glitch",
+          "subtype": "unnatural_transition",
+          "start_s": 15.74,
+          "end_s": 15.84,
+          "bbox": null,
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "unscored_predictions": 0,
+  "ignored_predictions": 0
+}

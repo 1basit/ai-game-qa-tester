@@ -1,0 +1,90 @@
+{
+  "video_id": "p4_mandel_s2",
+  "synthetic": true,
+  "duration_s": 20.0,
+  "per_category": {
+    "texture_pop_in": {
+      "category": "texture_pop_in",
+      "n_predictions": 6,
+      "n_ground_truth": 7,
+      "tp": 5,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.8333333333333334,
+      "recall": 0.7142857142857143,
+      "f1": 0.7692307692307692,
+      "fp_per_minute": 3.0,
+      "matches": [
+        {
+          "detection_id": "8a7ab829f1b24a67a623961b2714725d",
+          "gt_index": 6,
+          "tiou": 0.0123,
+          "peak_error_s": -0.2583
+        },
+        {
+          "detection_id": "f8e7f1216e3245cc91b3b7682c93aaee",
+          "gt_index": 1,
+          "tiou": 0.0068,
+          "peak_error_s": -0.72
+        },
+        {
+          "detection_id": "551113ab388a4f7e909b81352381b1ee",
+          "gt_index": 0,
+          "tiou": 0.0054,
+          "peak_error_s": -0.6033
+        },
+        {
+          "detection_id": "1d97cfeb041a4201934f2666b9f89488",
+          "gt_index": 4,
+          "tiou": 0.004,
+          "peak_error_s": -0.4067
+        },
+        {
+          "detection_id": "f029a00fdd284aeca885d8e62b6d223d",
+          "gt_index": 5,
+          "tiou": 0.0033,
+          "peak_error_s": -0.4967
+        }
+      ],
+      "false_positives": [
+        {
+          "detection_id": "d4c5122183da4f3693d4d9b816d146f6",
+          "subtype": "texture_pop_in",
+          "start_s": 1.233333,
+          "end_s": 1.25,
+          "peak_s": 1.25,
+          "confidence": 0.902
+        }
+      ],
+      "false_negatives": [
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 3.59,
+          "end_s": 3.74,
+          "bbox": {
+            "x": 0.291,
+            "y": 0.245,
+            "w": 0.136,
+            "h": 0.335
+          },
+          "notes": ""
+        },
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 4.19,
+          "end_s": 4.34,
+          "bbox": {
+            "x": 0.291,
+            "y": 0.245,
+            "w": 0.136,
+            "h": 0.335
+          },
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "unscored_predictions": 0
+}

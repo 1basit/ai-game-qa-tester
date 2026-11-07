@@ -1,0 +1,80 @@
+{
+  "video_id": "p4_photo_s2",
+  "synthetic": true,
+  "duration_s": 20.0,
+  "per_category": {
+    "texture_pop_in": {
+      "category": "texture_pop_in",
+      "n_predictions": 7,
+      "n_ground_truth": 8,
+      "tp": 7,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.875,
+      "f1": 0.9333333333333333,
+      "fp_per_minute": 0.0,
+      "matches": [
+        {
+          "detection_id": "4957a038750640979d337414095d4992",
+          "gt_index": 6,
+          "tiou": 0.1111,
+          "peak_error_s": -0.025
+        },
+        {
+          "detection_id": "93b35015429c4b219c068a97e277a7ed",
+          "gt_index": 1,
+          "tiou": 0.1111,
+          "peak_error_s": -0.015
+        },
+        {
+          "detection_id": "227576e9bcd64184a434963a00781aee",
+          "gt_index": 5,
+          "tiou": 0.1111,
+          "peak_error_s": -0.0117
+        },
+        {
+          "detection_id": "d75655a8fc594844aa413f30d2048743",
+          "gt_index": 7,
+          "tiou": 0.0114,
+          "peak_error_s": -0.5717
+        },
+        {
+          "detection_id": "892166df893e4d17aa76a4ae868094f2",
+          "gt_index": 0,
+          "tiou": 0.0096,
+          "peak_error_s": -0.505
+        },
+        {
+          "detection_id": "5186e6aeff474975b4e5deedab1946ef",
+          "gt_index": 3,
+          "tiou": 0.0093,
+          "peak_error_s": -0.3483
+        },
+        {
+          "detection_id": "3ca068f8dfcb4c68b4cee7a4de7ff1fe",
+          "gt_index": 4,
+          "tiou": 0.0038,
+          "peak_error_s": -0.4317
+        }
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        {
+          "category": "texture_pop_in",
+          "subtype": "texture_pop_in",
+          "start_s": 10.0,
+          "end_s": 10.15,
+          "bbox": {
+            "x": 0.33,
+            "y": 0.54,
+            "w": 0.198,
+            "h": 0.236
+          },
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "unscored_predictions": 0
+}

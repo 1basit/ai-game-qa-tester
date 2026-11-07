@@ -1,0 +1,12 @@
+{
+  "video_id": "p3_mandel_clean",
+  "video_file": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase3/mandel_clean.mp4",
+  "duration_s": 20.0,
+  "reviewed_categories": [
+    "fps_drop"
+  ],
+  "annotator": "injection script",
+  "source": "generated: ffmpeg mandelbrot zoom",
+  "synthetic": true,
+  "events": []
+}

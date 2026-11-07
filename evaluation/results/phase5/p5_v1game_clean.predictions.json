@@ -1,0 +1,63 @@
+{
+  "video_id": "p5_v1game_clean",
+  "video": {
+    "source_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase5/v1game_clean.mp4",
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "width": 1280,
+    "height": 720,
+    "fps_nominal": 60.0,
+    "frame_count": 1111,
+    "duration_s": 18.5167,
+    "is_vfr": false,
+    "rotation": 0,
+    "fps_average": 60.0,
+    "start_time_s": 0.0,
+    "file_size_bytes": 5170157,
+    "fingerprint": "727b7be949a4d63a23a94103ecd6e689781d0781176202bc5289e82c1ea02706",
+    "pix_fmt": "yuv420p",
+    "bit_depth": 8,
+    "color_transfer": null,
+    "is_hdr": false,
+    "has_audio": false,
+    "timing": {
+      "n_intervals": 1110,
+      "median_interval_s": 0.016666999999999987,
+      "min_interval_s": 0.016665999999997183,
+      "max_interval_s": 0.016667000000001764,
+      "irregular_intervals": 0,
+      "irregular_fraction": 0.0
+    },
+    "declared_frame_count": 1111,
+    "declared_duration_s": 18.5167,
+    "truncation_suspected": false
+  },
+  "generated_at": "2026-11-06T22:44:09.666856Z",
+  "detections": [
+    {
+      "id": "37ef67f07a6241d989476075df1412ce",
+      "category": "animation_glitch",
+      "subtype": "unnatural_transition",
+      "detector": "animation_glitch",
+      "detector_version": "1.0",
+      "start_time_s": 4.35,
+      "end_time_s": 4.366667,
+      "peak_time_s": 4.366667,
+      "start_frame": 261,
+      "end_frame": 262,
+      "peak_frame": 262,
+      "confidence": 0.717,
+      "bbox": null,
+      "affected_area_ratio": 1.0,
+      "description": "One-frame discontinuity: the image jumped and motion continued normally",
+      "metrics": {
+        "change": 17.5,
+        "recent_median_change": 2.21
+      },
+      "severity": null,
+      "severity_reason": null,
+      "occurrence_group": null,
+      "evidence": null
+    }
+  ]
+}

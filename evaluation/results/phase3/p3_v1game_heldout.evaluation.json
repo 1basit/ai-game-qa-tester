@@ -1,0 +1,91 @@
+{
+  "video_id": "p3_v1game_heldout",
+  "synthetic": true,
+  "duration_s": 18.5167,
+  "per_category": {
+    "fps_drop": {
+      "category": "fps_drop",
+      "n_predictions": 10,
+      "n_ground_truth": 7,
+      "tp": 7,
+      "fp": 3,
+      "fn": 0,
+      "precision": 0.7,
+      "recall": 1.0,
+      "f1": 0.8235294117647058,
+      "fp_per_minute": 9.720954597741498,
+      "matches": [
+        {
+          "detection_id": "053ff5658e494a51aa51f77431140b03",
+          "gt_index": 2,
+          "tiou": 1.0,
+          "peak_error_s": -0.175
+        },
+        {
+          "detection_id": "7b3421071d244da4a7134f1877cf1f6f",
+          "gt_index": 0,
+          "tiou": 1.0,
+          "peak_error_s": -0.2
+        },
+        {
+          "detection_id": "a80f0da11ded465599242ac9c823434b",
+          "gt_index": 6,
+          "tiou": 1.0,
+          "peak_error_s": -0.25
+        },
+        {
+          "detection_id": "31b13c3c3d544835b0fb15ecbc0bb030",
+          "gt_index": 4,
+          "tiou": 0.9796,
+          "peak_error_s": -0.4
+        },
+        {
+          "detection_id": "5a03d045eacb4ec2806cb481bc96c06d",
+          "gt_index": 1,
+          "tiou": 0.4,
+          "peak_error_s": -0.5
+        },
+        {
+          "detection_id": "26ed537df20a4573a021f852d9d9d50d",
+          "gt_index": 5,
+          "tiou": 0.32,
+          "peak_error_s": -3.65
+        },
+        {
+          "detection_id": "ad9731e69cee49ce955bb76360a6910a",
+          "gt_index": 3,
+          "tiou": 0.3077,
+          "peak_error_s": 1.25
+        }
+      ],
+      "false_positives": [
+        {
+          "detection_id": "6d3c541c330045d381ad616854fc1bb6",
+          "subtype": "fps_drop",
+          "start_s": 4.5,
+          "end_s": 6.75,
+          "peak_s": 5.5,
+          "confidence": 0.667
+        },
+        {
+          "detection_id": "a8709716f3994259bd5d0ea08976b06b",
+          "subtype": "frozen_frame",
+          "start_s": 8.216667,
+          "end_s": 9.183333,
+          "peak_s": 8.216667,
+          "confidence": 1.0
+        },
+        {
+          "detection_id": "660085a581a64238b9044b99eb481793",
+          "subtype": "frozen_frame",
+          "start_s": 12.033333,
+          "end_s": 12.4,
+          "peak_s": 12.033333,
+          "confidence": 0.743
+        }
+      ],
+      "false_negatives": []
+    }
+  },
+  "unscored_predictions": 0
+}
