@@ -56,6 +56,18 @@ class Drop(Op):
 
 
 @dataclass
+class Stutter(Op):
+    """Uneven pacing: one frame in every ``every`` repeats the previous picture (e.g. every
+    6th frame at 60 FPS = 10 missed frames/s, effective 50 FPS: above a 45 FPS drop threshold)."""
+
+    every: int = 6
+
+    def gt(self):
+        return [{"category": "fps_drop", "subtype": "fps_drop", "start_s": self.t0, "end_s": self.t0 + self.dur,
+                 "notes": "stutter"}]
+
+
+@dataclass
 class Region:
     x: float
     y: float
@@ -164,6 +176,7 @@ def render(
     tp_done: set[int] = set()
     src_t0: float | None = None
     src_of_out: list[float] = []  # source time (relative to start_s) of every output frame
+    last_out: np.ndarray | None = None
     try:
         for frame in stream:
             if src_t0 is None:
@@ -197,6 +210,9 @@ def render(
                     if held is None or rel == 0:
                         held = img.copy() if rel == 0 or held is None else held
                     out = held.copy()
+                elif isinstance(op, Stutter):
+                    if rel % op.every == op.every - 1 and last_out is not None:
+                        out = last_out.copy()
                 elif isinstance(op, Drop):
                     if rel % op.keep_every == 0 or held is None:
                         held = img.copy()
@@ -226,6 +242,7 @@ def render(
                         out[y0:y1, x0:x1] = cv2.warpAffine(out[y0:y1, x0:x1], M, (x1 - x0, y1 - y0),
                                                            borderMode=cv2.BORDER_REPLICATE)
             proc.stdin.write(out.tobytes())  # type: ignore[union-attr]
+            last_out = out
             src_of_out.append(src_rel)
             out_i += 1
     finally:

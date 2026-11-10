@@ -1,0 +1,22 @@
+usage: main.py analyze [-h] --video VIDEO [--target-fps TARGET_FPS]
+                       [--drop-ratio DROP_RATIO] [--freeze-ms FREEZE_MS]
+                       [--stutter-min-missed STUTTER_MIN_MISSED]
+                       [--output OUTPUT] [--no-report]
+                       [--max-events MAX_EVENTS] [--quiet]
+
+options:
+  -h, --help            show this help message and exit
+  --video VIDEO         path to an .mp4, .mkv or .avi file
+  --target-fps TARGET_FPS
+                        frame rate the game should hold (e.g. 30 or 60)
+  --drop-ratio DROP_RATIO
+                        drop if effective FPS < ratio x target (default 0.75)
+  --freeze-ms FREEZE_MS
+                        freeze if a picture is held this long (default 250)
+  --stutter-min-missed STUTTER_MIN_MISSED
+                        missed frames per second for a stutter (default 3)
+  --output OUTPUT       output folder (default: outputs/<date-time>_<video>)
+  --no-report           skip the Word report
+  --max-events MAX_EVENTS
+                        events to list in the terminal
+  --quiet               no progress output

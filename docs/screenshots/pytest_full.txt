@@ -1,0 +1,32 @@
+........................xxx............................................. [ 33%]
+........................................................................ [ 67%]
+....................................................................     [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_api.py::test_password_minimum_length
+  /Users/amh/Desktop/FYP/backend/src/gameqa/api/routes.py:123: StarletteDeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+    _check_password(request, body.password)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+XFAIL tests/test_clipping_detector.py::test_static_weapon_without_occlusion_is_clean - viewmodel clipping is experimental and failed validation (Phase 7): spurious detections on clean input, occlusion missed
+XFAIL tests/test_clipping_detector.py::test_occluded_weapon_tip_is_clipping - viewmodel clipping is experimental and failed validation (Phase 7): spurious detections on clean input, occlusion missed
+XFAIL tests/test_clipping_detector.py::test_weapon_switch_is_not_clipping - viewmodel clipping is experimental and failed validation (Phase 7): spurious detections on clean input, occlusion missed
+209 passed, 3 xfailed, 2 warnings in 73.80s (0:01:13)
+Exception ignored in: <function PoseLandmarker.__del__ at 0x134043d80>
+Traceback (most recent call last):
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/vision/pose_landmarker.py", line 611, in __del__
+    self.close()
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/vision/pose_landmarker.py", line 586, in close
+    self._lib.MpPoseLandmarkerClose(self._handle)  # pyrefly: ignore[missing-attribute]
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/core/serial_dispatcher.py", line 74, in shutdown_aware_handler
+    return handler(*args, **kwargs)
+  File "/Users/amh/Desktop/FYP/backend/.venv/lib/python3.13/site-packages/mediapipe/tasks/python/core/mediapipe_c_utils.py", line 142, in dispatcher_wrapper
+    executor.submit(dispatch_and_free).result()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 171, in submit
+    raise RuntimeError('cannot schedule new futures after shutdown')
+RuntimeError: cannot schedule new futures after shutdown
+exit=0

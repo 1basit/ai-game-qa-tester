@@ -28,3 +28,9 @@ frontend/dist/
 .idea/
 .vscode/
 ~$*.docx
+
+# Prototype analysis outputs (one folder per analysed video)
+outputs/
+
+# Phase 6 generated test videos and CLI outputs (rebuilt by backend/scripts/phase6_test.py)
+evaluation/synthetic/phase6/

@@ -39,6 +39,16 @@ evidence:
   clip_duration_s: 8          # FR-4: 5-10 s
   screenshot_format: png
 
+# Prototype FPS analysis service: `python main.py analyze --video ...` and `python main.py --gui`
+fps_service:
+  target_fps: 60             # 30 or 60: the frame rate the game is expected to hold
+  drop_ratio: 0.75           # FPS drop = effective FPS below 75 % of the target for >= 2 windows
+  freeze_ms: 250             # freeze = one picture held >= 250 ms while the scene is moving
+  stutter_min_missed: 3      # stutter = >= 3 isolated missed frames within 1 s, above the drop threshold
+  output_dir: outputs        # one sub-folder per analysed video
+  gui_host: 127.0.0.1        # local only: the prototype GUI has no login
+  gui_port: 8765
+
 # FR-5 severity rules (see backend/src/gameqa/severity.py). Category gives the starting
 # band (SRS: clipping / severe performance = High, gameplay-affecting = Medium, visual = Low);
 # these thresholds raise it. Not calibrated against human ratings (none available).

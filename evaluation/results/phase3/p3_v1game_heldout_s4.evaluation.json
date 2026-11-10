@@ -16,31 +16,31 @@
       "fp_per_minute": 0.0,
       "matches": [
         {
-          "detection_id": "d94c1770b83f427088cd78a4dce5938e",
+          "detection_id": "6bb0171eff6e448ca93f0a3d10559c56",
           "gt_index": 2,
           "tiou": 1.0,
           "peak_error_s": -0.425
         },
         {
-          "detection_id": "15efb45fffa745b58fcadf6341eef55c",
+          "detection_id": "2520bd226cb4456982514ec3e1f0d4c5",
           "gt_index": 3,
           "tiou": 0.975,
           "peak_error_s": -0.26
         },
         {
-          "detection_id": "cf9b79544d5a4477844f74d26428be7b",
+          "detection_id": "dd1f9233e0bf42f1bd8a61e68d43746b",
           "gt_index": 1,
           "tiou": 0.9749,
           "peak_error_s": -0.3167
         },
         {
-          "detection_id": "b9ac0d80753a444fa03295528f9ee9fd",
+          "detection_id": "0139ed722174405fb3c3c80017489fcd",
           "gt_index": 0,
           "tiou": 0.9723,
           "peak_error_s": -0.4617
         },
         {
-          "detection_id": "b9d4efa0a6bc4e86ae21cb6c7364ae49",
+          "detection_id": "155678357eeb4d24bd998bddee4afd31",
           "gt_index": 4,
           "tiou": 0.528,
           "peak_error_s": 0.06
@@ -59,5 +59,6 @@
       ]
     }
   },
-  "unscored_predictions": 0
+  "unscored_predictions": 0,
+  "ignored_predictions": 0
 }

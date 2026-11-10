@@ -1,0 +1,2954 @@
+[
+ {
+  "name": "real_full_1080p60.mp4",
+  "kind": "real recording (original)",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 26.1,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:01:54.657712Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/videos/YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hands-Clipping-Into-Walls-in-Unity-URP-SRP_001_1080p.mp4",
+    "video_name": "YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hands-Clipping-Into-Walls-in-Unity-URP-SRP_001_1080p.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hands-Clipping-Into-Walls-in-Unity-URP-SRP_001_1080p.mp4",
+     "file_size_mb": 22.68,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 11955,
+     "duration_s": 199.25,
+     "variable_frame_rate": false,
+     "has_audio": true,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 53.9,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 27.4,
+     "measurable_fraction": 0.092
+    },
+    "frame_times": {
+     "count": 880,
+     "mean_ms": 19.13,
+     "p50_ms": 16.67,
+     "p95_ms": 17.5,
+     "p99_ms": 33.33,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 11955,
+     "repeated_frames": 10684,
+     "missed_frames_while_moving": 130,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 9% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 24.78,
+     "realtime_factor": 8.04,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 148392
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 26.5,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:20.817320Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230155_real_full_1080p60/input/real_full_1080p60.mp4",
+    "video_name": "real_full_1080p60.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_full_1080p60.mp4",
+     "file_size_mb": 22.68,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 11955,
+     "duration_s": 199.25,
+     "variable_frame_rate": false,
+     "has_audio": true,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 53.9,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 27.4,
+     "measurable_fraction": 0.092
+    },
+    "frame_times": {
+     "count": 880,
+     "mean_ms": 19.13,
+     "p50_ms": 16.67,
+     "p95_ms": 17.5,
+     "p99_ms": 33.33,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 11955,
+     "repeated_frames": 10684,
+     "missed_frames_while_moving": 130,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 9% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 25.19,
+     "realtime_factor": 7.91,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    148332
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "real_gameplay_20s.mp4",
+  "kind": "real, first 20 s (gameplay), stream copy",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 4.0,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:25.308411Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/real_gameplay_20s.mp4",
+    "video_name": "real_gameplay_20s.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_20s.mp4",
+     "file_size_mb": 6.26,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.0,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 26.7,
+     "measurable_fraction": 0.935
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 19.07,
+     "p50_ms": 16.67,
+     "p95_ms": 31.67,
+     "p99_ms": 33.33,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 261,
+     "missed_frames_while_moving": 113,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 94% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.64,
+     "realtime_factor": 7.57,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 219274
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 3.1,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:28.761046Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230226_real_gameplay_20s/input/real_gameplay_20s.mp4",
+    "video_name": "real_gameplay_20s.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_20s.mp4",
+     "file_size_mb": 6.26,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.0,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 26.7,
+     "measurable_fraction": 0.935
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 19.07,
+     "p50_ms": 16.67,
+     "p95_ms": 31.67,
+     "p99_ms": 33.33,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 261,
+     "missed_frames_while_moving": 113,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 94% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.68,
+     "realtime_factor": 7.46,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    219279
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "real_gameplay_20s.mkv",
+  "kind": "real, MKV container (stream copy)",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 4.0,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:32.360872Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/real_gameplay_20s.mkv",
+    "video_name": "real_gameplay_20s.mkv",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_20s.mkv",
+     "file_size_mb": 6.26,
+     "container": "matroska,webm",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 17.0,
+     "min_ms": 16.0,
+     "max_ms": 17.0,
+     "p99_ms": 17.0,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.0,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 26.7,
+     "measurable_fraction": 0.935
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 19.07,
+     "p50_ms": 17.0,
+     "p95_ms": 31.4,
+     "p99_ms": 34.0,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 29.4
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 261,
+     "missed_frames_while_moving": 113,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 94% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.64,
+     "realtime_factor": 7.57,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 233448
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 3.1,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:35.726188Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230233_real_gameplay_20s/input/real_gameplay_20s.mkv",
+    "video_name": "real_gameplay_20s.mkv",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_20s.mkv",
+     "file_size_mb": 6.26,
+     "container": "matroska,webm",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 17.0,
+     "min_ms": 16.0,
+     "max_ms": 17.0,
+     "p99_ms": 17.0,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.0,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 26.7,
+     "measurable_fraction": 0.935
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 19.07,
+     "p50_ms": 17.0,
+     "p95_ms": 31.4,
+     "p99_ms": 34.0,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 29.4
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 261,
+     "missed_frames_while_moving": 113,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 94% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.61,
+     "realtime_factor": 7.67,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    233454
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "real_gameplay_720p.avi",
+  "kind": "real, AVI container, MPEG-4 Part 2, 720p",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 2.5,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:37.921130Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/real_gameplay_720p.avi",
+    "video_name": "real_gameplay_720p.avi",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_720p.avi",
+     "file_size_mb": 13.3,
+     "container": "avi",
+     "codec": "mpeg4",
+     "resolution": "1280x720",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 57.6,
+     "median": 58.0,
+     "min": 51.0,
+     "p5": 54.0,
+     "measurable_fraction": 0.831
+    },
+    "frame_times": {
+     "count": 780,
+     "mean_ms": 17.61,
+     "p50_ms": 16.67,
+     "p95_ms": 16.67,
+     "p99_ms": 33.33,
+     "max_ms": 133.33,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 255,
+     "missed_frames_while_moving": 44,
+     "freezes": 0,
+     "fps_drops": 0,
+     "stutters": 5
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.5,
+      "duration_s": 1.75,
+      "start_frame": 45,
+      "end_frame": 150,
+      "description": "Uneven frame pacing: up to 4 missed frames per second while the average stayed at 56 FPS",
+      "metrics": {
+       "max_missed_per_s": 4,
+       "effective_fps_at_peak": 56.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 11.5,
+      "duration_s": 2.75,
+      "start_frame": 525,
+      "end_frame": 690,
+      "description": "Uneven frame pacing: up to 4 missed frames per second while the average stayed at 56 FPS",
+      "metrics": {
+       "max_missed_per_s": 4,
+       "effective_fps_at_peak": 56.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 16.25,
+      "duration_s": 1.75,
+      "start_frame": 870,
+      "end_frame": 975,
+      "description": "Uneven frame pacing: up to 4 missed frames per second while the average stayed at 56 FPS",
+      "metrics": {
+       "max_missed_per_s": 4,
+       "effective_fps_at_peak": 56.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 16.0,
+      "end_s": 18.5,
+      "duration_s": 2.5,
+      "start_frame": 960,
+      "end_frame": 1110,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     }
+    ],
+    "verdict": "Detected 5 stutter period(s) in the 83% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.13,
+     "realtime_factor": 17.74,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 214196
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 1.6,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:39.821745Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230238_real_gameplay_720p/input/real_gameplay_720p.avi",
+    "video_name": "real_gameplay_720p.avi",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_720p.avi",
+     "file_size_mb": 13.3,
+     "container": "avi",
+     "codec": "mpeg4",
+     "resolution": "1280x720",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 57.6,
+     "median": 58.0,
+     "min": 51.0,
+     "p5": 54.0,
+     "measurable_fraction": 0.831
+    },
+    "frame_times": {
+     "count": 780,
+     "mean_ms": 17.61,
+     "p50_ms": 16.67,
+     "p95_ms": 16.67,
+     "p99_ms": 33.33,
+     "max_ms": 133.33,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 255,
+     "missed_frames_while_moving": 44,
+     "freezes": 0,
+     "fps_drops": 0,
+     "stutters": 5
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.5,
+      "duration_s": 1.75,
+      "start_frame": 45,
+      "end_frame": 150,
+      "description": "Uneven frame pacing: up to 4 missed frames per second while the average stayed at 56 FPS",
+      "metrics": {
+       "max_missed_per_s": 4,
+       "effective_fps_at_peak": 56.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 11.5,
+      "duration_s": 2.75,
+      "start_frame": 525,
+      "end_frame": 690,
+      "description": "Uneven frame pacing: up to 4 missed frames per second while the average stayed at 56 FPS",
+      "metrics": {
+       "max_missed_per_s": 4,
+       "effective_fps_at_peak": 56.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 16.25,
+      "duration_s": 1.75,
+      "start_frame": 870,
+      "end_frame": 975,
+      "description": "Uneven frame pacing: up to 4 missed frames per second while the average stayed at 56 FPS",
+      "metrics": {
+       "max_missed_per_s": 4,
+       "effective_fps_at_peak": 56.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 16.0,
+      "end_s": 18.5,
+      "duration_s": 2.5,
+      "start_frame": 960,
+      "end_frame": 1110,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     }
+    ],
+    "verdict": "Detected 5 stutter period(s) in the 83% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.11,
+     "realtime_factor": 18.01,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    214202
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "real_gameplay_30fps.mp4",
+  "kind": "real, resampled to 30 FPS (target 30)",
+  "target": 30,
+  "cli": {
+   "exit": 0,
+   "seconds": 2.7,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:42.207964Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/real_gameplay_30fps.mp4",
+    "video_name": "real_gameplay_30fps.mp4",
+    "settings": {
+     "target_fps": 30.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_30fps.mp4",
+     "file_size_mb": 7.8,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 30.0,
+     "average_fps": 30.0,
+     "frame_count": 601,
+     "duration_s": 20.033,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 33.333,
+     "median_ms": 33.333,
+     "min_ms": 33.333,
+     "max_ms": 33.334,
+     "p99_ms": 33.334,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 30.0,
+     "drop_threshold_fps": 22.5,
+     "mean": 27.9,
+     "median": 30.0,
+     "min": 2.0,
+     "p5": 13.6,
+     "measurable_fraction": 0.948
+    },
+    "frame_times": {
+     "count": 459,
+     "mean_ms": 36.24,
+     "p50_ms": 33.33,
+     "p95_ms": 33.33,
+     "p99_ms": 66.67,
+     "max_ms": 1066.67,
+     "one_percent_low_fps": 15.0
+    },
+    "counts": {
+     "frames_analysed": 601,
+     "repeated_frames": 94,
+     "missed_frames_while_moving": 40,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 1
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 2.5,
+      "end_s": 4.0,
+      "duration_s": 1.5,
+      "start_frame": 75,
+      "end_frame": 120,
+      "description": "Uneven frame pacing: up to 3 missed frames per second while the average stayed at 27 FPS",
+      "metrics": {
+       "max_missed_per_s": 3,
+       "effective_fps_at_peak": 27.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.433,
+      "duration_s": 1.067,
+      "start_frame": 551,
+      "end_frame": 583,
+      "description": "Picture held for 1067 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1066.7,
+       "held_frames": 32,
+       "motion_mad_around": 1.28
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 1 stutter period(s) in the 95% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.43,
+     "realtime_factor": 13.97,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 190235
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 2.1,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:44.396773Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230242_real_gameplay_30fps/input/real_gameplay_30fps.mp4",
+    "video_name": "real_gameplay_30fps.mp4",
+    "settings": {
+     "target_fps": 30.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_30fps.mp4",
+     "file_size_mb": 7.8,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 30.0,
+     "average_fps": 30.0,
+     "frame_count": 601,
+     "duration_s": 20.033,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 33.333,
+     "median_ms": 33.333,
+     "min_ms": 33.333,
+     "max_ms": 33.334,
+     "p99_ms": 33.334,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 30.0,
+     "drop_threshold_fps": 22.5,
+     "mean": 27.9,
+     "median": 30.0,
+     "min": 2.0,
+     "p5": 13.6,
+     "measurable_fraction": 0.948
+    },
+    "frame_times": {
+     "count": 459,
+     "mean_ms": 36.24,
+     "p50_ms": 33.33,
+     "p95_ms": 33.33,
+     "p99_ms": 66.67,
+     "max_ms": 1066.67,
+     "one_percent_low_fps": 15.0
+    },
+    "counts": {
+     "frames_analysed": 601,
+     "repeated_frames": 94,
+     "missed_frames_while_moving": 40,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 1
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 2.5,
+      "end_s": 4.0,
+      "duration_s": 1.5,
+      "start_frame": 75,
+      "end_frame": 120,
+      "description": "Uneven frame pacing: up to 3 missed frames per second while the average stayed at 27 FPS",
+      "metrics": {
+       "max_missed_per_s": 3,
+       "effective_fps_at_peak": 27.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.433,
+      "duration_s": 1.067,
+      "start_frame": 551,
+      "end_frame": 583,
+      "description": "Picture held for 1067 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1066.7,
+       "held_frames": 32,
+       "motion_mad_around": 1.28
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 1 stutter period(s) in the 95% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.42,
+     "realtime_factor": 14.11,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    190242
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "real_gameplay_vfr.mp4",
+  "kind": "real, repeated frames removed -> variable frame rate",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 3.7,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:47.978355Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/real_gameplay_vfr.mp4",
+    "video_name": "real_gameplay_vfr.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_vfr.mp4",
+     "file_size_mb": 9.73,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 53.85,
+     "frame_count": 1078,
+     "duration_s": 20.017,
+     "variable_frame_rate": true,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 233.333,
+     "p99_ms": 70.667,
+     "irregular_intervals": 49
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 57.0,
+     "median": 57.0,
+     "min": 47.0,
+     "p5": 52.3,
+     "measurable_fraction": 0.87
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 17.77,
+     "p50_ms": 16.67,
+     "p95_ms": 31.67,
+     "p99_ms": 33.33,
+     "max_ms": 133.33,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1078,
+     "repeated_frames": 139,
+     "missed_frames_while_moving": 64,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 163,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 282,
+      "end_frame": 432,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 507,
+      "end_frame": 715,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 819,
+      "end_frame": 1042,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1049,
+      "end_frame": 1062,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 13,
+       "motion_mad_around": 1.08
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 87% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.42,
+     "realtime_factor": 8.25,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 225649
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 3.1,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:51.248992Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230248_real_gameplay_vfr/input/real_gameplay_vfr.mp4",
+    "video_name": "real_gameplay_vfr.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_gameplay_vfr.mp4",
+     "file_size_mb": 9.73,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 53.85,
+     "frame_count": 1078,
+     "duration_s": 20.017,
+     "variable_frame_rate": true,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 233.333,
+     "p99_ms": 70.667,
+     "irregular_intervals": 49
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 57.0,
+     "median": 57.0,
+     "min": 47.0,
+     "p5": 52.3,
+     "measurable_fraction": 0.87
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 17.77,
+     "p50_ms": 16.67,
+     "p95_ms": 31.67,
+     "p99_ms": 33.33,
+     "max_ms": 133.33,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1078,
+     "repeated_frames": 139,
+     "missed_frames_while_moving": 64,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 163,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 282,
+      "end_frame": 432,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 507,
+      "end_frame": 715,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 819,
+      "end_frame": 1042,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1049,
+      "end_frame": 1062,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 13,
+       "motion_mad_around": 1.08
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 87% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.48,
+     "realtime_factor": 8.05,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    225657
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "real_editor_static_30s.mp4",
+  "kind": "real, 30 s of the (mostly static) Unity editor",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 5.1,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:02:56.202590Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/real_editor_static_30s.mp4",
+    "video_name": "real_editor_static_30s.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_editor_static_30s.mp4",
+     "file_size_mb": 3.25,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1800,
+     "duration_s": 30.0,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": null,
+     "median": null,
+     "min": null,
+     "p5": null,
+     "measurable_fraction": 0.0
+    },
+    "frame_times": {
+     "count": 28,
+     "mean_ms": 16.67,
+     "p50_ms": 16.67,
+     "p95_ms": 16.67,
+     "p99_ms": 16.67,
+     "max_ms": 16.67,
+     "one_percent_low_fps": 60.0
+    },
+    "counts": {
+     "frames_analysed": 1800,
+     "repeated_frames": 1735,
+     "missed_frames_while_moving": 0,
+     "freezes": 0,
+     "fps_drops": 0,
+     "stutters": 0
+    },
+    "events": [],
+    "verdict": "Not measurable: the picture never moved enough to measure frame pacing.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 3.85,
+     "realtime_factor": 7.8,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 128830
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 4.1,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:03:00.729183Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230256_real_editor_static_30s/input/real_editor_static_30s.mp4",
+    "video_name": "real_editor_static_30s.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "real_editor_static_30s.mp4",
+     "file_size_mb": 3.25,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1800,
+     "duration_s": 30.0,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": null,
+     "median": null,
+     "min": null,
+     "p5": null,
+     "measurable_fraction": 0.0
+    },
+    "frame_times": {
+     "count": 28,
+     "mean_ms": 16.67,
+     "p50_ms": 16.67,
+     "p95_ms": 16.67,
+     "p99_ms": 16.67,
+     "max_ms": 16.67,
+     "one_percent_low_fps": 60.0
+    },
+    "counts": {
+     "frames_analysed": 1800,
+     "repeated_frames": 1735,
+     "missed_frames_while_moving": 0,
+     "freezes": 0,
+     "fps_drops": 0,
+     "stutters": 0
+    },
+    "events": [],
+    "verdict": "Not measurable: the picture never moved enough to measure frame pacing.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 3.82,
+     "realtime_factor": 7.84,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    128836
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "real_gameplay_truncated.mp4",
+  "kind": "real 20 s file cut to half its bytes (damaged)",
+  "target": 60,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.6,
+   "error": "cannot read video 'real_gameplay_truncated.mp4': the file is damaged or incomplete (Invalid data found when processing input)"
+  },
+  "gui": {
+   "http": 202,
+   "status": "failed",
+   "seconds": 0.5,
+   "error": "cannot read video 'real_gameplay_truncated.mp4': the file is damaged or incomplete (Invalid data found when processing input)"
+  }
+ },
+ {
+  "name": "tiny_2_frames.mp4",
+  "kind": "real, only 2 frames",
+  "target": 60,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.7,
+   "error": "video too short to analyse (fewer than 3 frames)"
+  },
+  "gui": {
+   "http": 202,
+   "status": "failed",
+   "seconds": 0.5,
+   "error": "video too short to analyse (fewer than 3 frames)"
+  }
+ },
+ {
+  "name": "gameplay clip \u00fc (copy).mp4",
+  "kind": "real 20 s, file name with spaces / non-ASCII",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 3.9,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:03:06.391247Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/gameplay clip \u00fc (copy).mp4",
+    "video_name": "gameplay clip \u00fc (copy).mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "gameplay clip \u00fc (copy).mp4",
+     "file_size_mb": 6.26,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.0,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 26.7,
+     "measurable_fraction": 0.935
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 19.07,
+     "p50_ms": 16.67,
+     "p95_ms": 31.67,
+     "p99_ms": 33.33,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 261,
+     "missed_frames_while_moving": 113,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 94% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.6,
+     "realtime_factor": 7.69,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 219278
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 3.1,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:03:09.806960Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230307_gameplay_clip_\u00fc__copy_/input/gameplay clip \u00fc (copy).mp4",
+    "video_name": "gameplay clip \u00fc (copy).mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "gameplay clip \u00fc (copy).mp4",
+     "file_size_mb": 6.26,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1920x1080",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1201,
+     "duration_s": 20.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.0,
+     "median": 57.0,
+     "min": 5.0,
+     "p5": 26.7,
+     "measurable_fraction": 0.935
+    },
+    "frame_times": {
+     "count": 783,
+     "mean_ms": 19.07,
+     "p50_ms": 16.67,
+     "p95_ms": 31.67,
+     "p99_ms": 33.33,
+     "max_ms": 1050.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1201,
+     "repeated_frames": 261,
+     "missed_frames_while_moving": 113,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 2.75,
+      "duration_s": 2.0,
+      "start_frame": 45,
+      "end_frame": 165,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS",
+      "metrics": {
+       "max_missed_per_s": 9,
+       "effective_fps_at_peak": 51.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.25,
+      "duration_s": 3.75,
+      "start_frame": 870,
+      "end_frame": 1095,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 18.367,
+      "end_s": 19.417,
+      "duration_s": 1.05,
+      "start_frame": 1102,
+      "end_frame": 1165,
+      "description": "Picture held for 1050 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 1050.0,
+       "held_frames": 63,
+       "motion_mad_around": 1.09
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 94% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 2.59,
+     "realtime_factor": 7.73,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    219300
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": ""
+ },
+ {
+  "name": "inject_freeze.mp4",
+  "kind": "real gameplay 0\u201318 s, 720p, freeze injected (10.0, 10.8)",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 2.4,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:03:11.918867Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/inject_freeze.mp4",
+    "video_name": "inject_freeze.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "inject_freeze.mp4",
+     "file_size_mb": 4.65,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1280x720",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1081,
+     "duration_s": 18.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.6,
+     "median": 57.0,
+     "min": 13.0,
+     "p5": 31.5,
+     "measurable_fraction": 0.928
+    },
+    "frame_times": {
+     "count": 741,
+     "mean_ms": 18.67,
+     "p50_ms": 16.67,
+     "p95_ms": 16.67,
+     "p99_ms": 33.33,
+     "max_ms": 800.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1081,
+     "repeated_frames": 211,
+     "missed_frames_while_moving": 89,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 3.0,
+      "duration_s": 2.25,
+      "start_frame": 45,
+      "end_frame": 180,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 10 missed frames per second while the average stayed at 50 FPS",
+      "metrics": {
+       "max_missed_per_s": 10,
+       "effective_fps_at_peak": 50.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 10.0,
+      "end_s": 10.8,
+      "duration_s": 0.8,
+      "start_frame": 600,
+      "end_frame": 648,
+      "description": "Picture held for 800 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 800.0,
+       "held_frames": 48,
+       "motion_mad_around": 3.82
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 11.0,
+      "end_s": 12.75,
+      "duration_s": 1.75,
+      "start_frame": 660,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.0,
+      "duration_s": 3.5,
+      "start_frame": 870,
+      "end_frame": 1080,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 93% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.11,
+     "realtime_factor": 16.2,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 218486
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 1.5,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:03:13.796031Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230312_inject_freeze/input/inject_freeze.mp4",
+    "video_name": "inject_freeze.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "inject_freeze.mp4",
+     "file_size_mb": 4.65,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1280x720",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1081,
+     "duration_s": 18.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 54.6,
+     "median": 57.0,
+     "min": 13.0,
+     "p5": 31.5,
+     "measurable_fraction": 0.928
+    },
+    "frame_times": {
+     "count": 741,
+     "mean_ms": 18.67,
+     "p50_ms": 16.67,
+     "p95_ms": 16.67,
+     "p99_ms": 33.33,
+     "max_ms": 800.0,
+     "one_percent_low_fps": 30.0
+    },
+    "counts": {
+     "frames_analysed": 1081,
+     "repeated_frames": 211,
+     "missed_frames_while_moving": 89,
+     "freezes": 1,
+     "fps_drops": 0,
+     "stutters": 4
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 3.0,
+      "duration_s": 2.25,
+      "start_frame": 45,
+      "end_frame": 180,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 4.75,
+      "end_s": 7.25,
+      "duration_s": 2.5,
+      "start_frame": 285,
+      "end_frame": 435,
+      "description": "Uneven frame pacing: up to 10 missed frames per second while the average stayed at 50 FPS",
+      "metrics": {
+       "max_missed_per_s": 10,
+       "effective_fps_at_peak": 50.0
+      }
+     },
+     {
+      "type": "freeze",
+      "start_s": 10.0,
+      "end_s": 10.8,
+      "duration_s": 0.8,
+      "start_frame": 600,
+      "end_frame": 648,
+      "description": "Picture held for 800 ms while the scene was moving",
+      "metrics": {
+       "hold_ms": 800.0,
+       "held_frames": 48,
+       "motion_mad_around": 3.82
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 11.0,
+      "end_s": 12.75,
+      "duration_s": 1.75,
+      "start_frame": 660,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.0,
+      "duration_s": 3.5,
+      "start_frame": 870,
+      "end_frame": 1080,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     }
+    ],
+    "verdict": "Detected 1 freeze(s), 4 stutter period(s) in the 93% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.09,
+     "realtime_factor": 16.56,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    218497
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": "FOUND freeze 10.00\u201310.80 s (injected 10.0\u201310.8 s)"
+ },
+ {
+  "name": "inject_drop.mp4",
+  "kind": "real gameplay 0\u201318 s, 720p, 20 FPS drop injected (4.0, 6.5)",
+  "target": 60,
+  "cli": {
+   "exit": 0,
+   "seconds": 2.4,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:03:15.878516Z",
+    "video_path": "/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/inject_drop.mp4",
+    "video_name": "inject_drop.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "inject_drop.mp4",
+     "file_size_mb": 4.61,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1280x720",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1081,
+     "duration_s": 18.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 52.0,
+     "median": 56.5,
+     "min": 18.0,
+     "p5": 20.0,
+     "measurable_fraction": 0.928
+    },
+    "frame_times": {
+     "count": 711,
+     "mean_ms": 19.71,
+     "p50_ms": 16.67,
+     "p95_ms": 50.0,
+     "p99_ms": 50.0,
+     "max_ms": 150.0,
+     "one_percent_low_fps": 20.0
+    },
+    "counts": {
+     "frames_analysed": 1081,
+     "repeated_frames": 252,
+     "missed_frames_while_moving": 130,
+     "freezes": 0,
+     "fps_drops": 1,
+     "stutters": 3
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 3.0,
+      "duration_s": 2.25,
+      "start_frame": 45,
+      "end_frame": 180,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "fps_drop",
+      "start_s": 3.5,
+      "end_s": 6.75,
+      "duration_s": 3.25,
+      "start_frame": 210,
+      "end_frame": 405,
+      "description": "Effective frame rate fell to 18 FPS (target 60)",
+      "metrics": {
+       "min_effective_fps": 18.0,
+       "target_fps": 60.0,
+       "threshold_fps": 45.0,
+       "mean_score": 0.59
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.0,
+      "duration_s": 3.5,
+      "start_frame": 870,
+      "end_frame": 1080,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     }
+    ],
+    "verdict": "Detected 1 FPS drop(s) below 45 FPS, 3 stutter period(s) in the 93% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.1,
+     "realtime_factor": 16.35,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report_bytes": 229209
+  },
+  "gui": {
+   "http": 202,
+   "status": "done",
+   "seconds": 1.5,
+   "error": null,
+   "result": {
+    "tool": "AI Game QA Tester 0.1.0 \u2014 FPS analysis service",
+    "analysed_at": "2026-11-07T18:03:17.757263Z",
+    "video_path": "/Users/amh/Desktop/FYP/outputs/20261107-230316_inject_drop/input/inject_drop.mp4",
+    "video_name": "inject_drop.mp4",
+    "settings": {
+     "target_fps": 60.0,
+     "drop_ratio": 0.75,
+     "freeze_ms": 250.0,
+     "stutter_min_missed": 3
+    },
+    "metadata": {
+     "file_name": "inject_drop.mp4",
+     "file_size_mb": 4.61,
+     "container": "mov,mp4,m4a,3gp,3g2,mj2",
+     "codec": "h264",
+     "resolution": "1280x720",
+     "nominal_fps": 60.0,
+     "average_fps": 60.0,
+     "frame_count": 1081,
+     "duration_s": 18.017,
+     "variable_frame_rate": false,
+     "has_audio": false,
+     "timestamp_source": "container timestamps (ffprobe), cross-checked with the OpenCV decoder"
+    },
+    "frame_intervals": {
+     "expected_ms": 16.667,
+     "median_ms": 16.667,
+     "min_ms": 16.666,
+     "max_ms": 16.667,
+     "p99_ms": 16.667,
+     "irregular_intervals": 0
+    },
+    "effective_fps": {
+     "target_fps": 60.0,
+     "drop_threshold_fps": 45.0,
+     "mean": 52.0,
+     "median": 56.5,
+     "min": 18.0,
+     "p5": 20.0,
+     "measurable_fraction": 0.928
+    },
+    "frame_times": {
+     "count": 711,
+     "mean_ms": 19.71,
+     "p50_ms": 16.67,
+     "p95_ms": 50.0,
+     "p99_ms": 50.0,
+     "max_ms": 150.0,
+     "one_percent_low_fps": 20.0
+    },
+    "counts": {
+     "frames_analysed": 1081,
+     "repeated_frames": 252,
+     "missed_frames_while_moving": 130,
+     "freezes": 0,
+     "fps_drops": 1,
+     "stutters": 3
+    },
+    "events": [
+     {
+      "type": "stutter",
+      "start_s": 0.75,
+      "end_s": 3.0,
+      "duration_s": 2.25,
+      "start_frame": 45,
+      "end_frame": 180,
+      "description": "Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS",
+      "metrics": {
+       "max_missed_per_s": 6,
+       "effective_fps_at_peak": 54.0
+      }
+     },
+     {
+      "type": "fps_drop",
+      "start_s": 3.5,
+      "end_s": 6.75,
+      "duration_s": 3.25,
+      "start_frame": 210,
+      "end_frame": 405,
+      "description": "Effective frame rate fell to 18 FPS (target 60)",
+      "metrics": {
+       "min_effective_fps": 18.0,
+       "target_fps": 60.0,
+       "threshold_fps": 45.0,
+       "mean_score": 0.59
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 8.75,
+      "end_s": 12.75,
+      "duration_s": 4.0,
+      "start_frame": 525,
+      "end_frame": 765,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     },
+     {
+      "type": "stutter",
+      "start_s": 14.5,
+      "end_s": 18.0,
+      "duration_s": 3.5,
+      "start_frame": 870,
+      "end_frame": 1080,
+      "description": "Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS",
+      "metrics": {
+       "max_missed_per_s": 5,
+       "effective_fps_at_peak": 55.0
+      }
+     }
+    ],
+    "verdict": "Detected 1 FPS drop(s) below 45 FPS, 3 stutter period(s) in the 93% of the video that could be measured.",
+    "limitations": [
+     "The game's true rendering FPS cannot be recovered from an ordinary recording: the video only contains the pictures the recorder captured. Ground truth needs engine profiler logs or an on-screen FPS counter, which were not available.",
+     "The recording frame rate caps what can be measured: a 60 FPS recording cannot show the game dropping from 144 to 90 FPS.",
+     "FPS can only be measured while the picture is moving. In still stretches (menus, paused game, camera at rest) a repeated frame is indistinguishable from a normal one; these stretches are excluded and reported as 'not measurable'.",
+     "Video-editing cuts and intentional game pauses (hit-stop, cut-scenes) can look like freezes.",
+     "Repeated frames are detected on a 160x90 grey thumbnail with a small tolerance for compression noise; extremely small on-screen motion may be read as a repeat only when the surrounding frames are clearly moving."
+    ],
+    "processing": {
+     "seconds": 1.09,
+     "realtime_factor": 16.52,
+     "engine": "gameqa.detectors.fps v1.0"
+    },
+    "warnings": []
+   },
+   "report": [
+    200,
+    229218
+   ],
+   "charts_ok": true
+  },
+  "identical": true,
+  "gt": "FOUND fps_drop 3.50\u20136.75 s (injected 4.0\u20136.5 s)"
+ },
+ {
+  "name": "does_not_exist.mp4",
+  "kind": "missing path",
+  "target": null,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.6,
+   "error": "'/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/invalid/does_not_exist.mp4' does not exist or is not a file"
+  },
+  "gui": {
+   "status": "not uploadable (not a file)"
+  }
+ },
+ {
+  "name": "notes.txt",
+  "kind": "unsupported extension .txt",
+  "target": null,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.5,
+   "error": "'notes.txt': format .txt is not supported. Accepted formats: .avi, .mkv, .mp4"
+  },
+  "gui": {
+   "http": 415,
+   "status": "rejected",
+   "error": "'notes.txt': format .txt is not supported. Accepted formats: .avi, .mkv, .mp4"
+  }
+ },
+ {
+  "name": "clip.mov",
+  "kind": "unsupported extension .mov",
+  "target": null,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.6,
+   "error": "'clip.mov': format .mov is not supported. Accepted formats: .avi, .mkv, .mp4"
+  },
+  "gui": {
+   "http": 415,
+   "status": "rejected",
+   "error": "'clip.mov': format .mov is not supported. Accepted formats: .avi, .mkv, .mp4"
+  }
+ },
+ {
+  "name": "text_renamed.mp4",
+  "kind": "text file renamed .mp4",
+  "target": null,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.6,
+   "error": "'text_renamed.mp4' is not a video file (content does not match any accepted container). Accepted formats: .avi, .mkv, .mp4"
+  },
+  "gui": {
+   "http": 202,
+   "status": "failed",
+   "seconds": 0.0,
+   "error": "'text_renamed.mp4' is not a video file (content does not match any accepted container). Accepted formats: .avi, .mkv, .mp4"
+  }
+ },
+ {
+  "name": "empty.mp4",
+  "kind": "0-byte .mp4",
+  "target": null,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.5,
+   "error": "'empty.mp4' is empty"
+  },
+  "gui": {
+   "http": 202,
+   "status": "failed",
+   "seconds": 0.0,
+   "error": "'empty.mp4' is empty"
+  }
+ },
+ {
+  "name": "a_folder.mp4",
+  "kind": "folder named .mp4",
+  "target": null,
+  "cli": {
+   "exit": 2,
+   "seconds": 0.5,
+   "error": "'/Users/amh/Desktop/FYP/evaluation/synthetic/phase6/invalid/a_folder.mp4' does not exist or is not a file"
+  },
+  "gui": {
+   "status": "not uploadable (not a file)"
+  }
+ }
+]

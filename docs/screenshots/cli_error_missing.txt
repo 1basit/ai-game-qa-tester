@@ -1,0 +1,9 @@
+
+AI Game QA Tester — FPS analysis
+  video : missing_video.mp4
+  target: 60 FPS (drop < 45 FPS, freeze >= 250 ms, stutter >= 3 missed/s)
+
+    0%  checking file
+
+  ERROR: 'missing_video.mp4' does not exist or is not a file
+exit=2

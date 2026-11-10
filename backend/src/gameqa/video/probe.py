@@ -59,8 +59,12 @@ def _run(args: list[str], timeout: float) -> str:
         raise CorruptVideoError(f"ffprobe timed out after {timeout:.0f}s") from exc
     if proc.returncode != 0:
         msg = proc.stderr.strip().splitlines()
+        detail = msg[-1] if msg else f"ffprobe exit code {proc.returncode}"
+        name = Path(args[-1]).name
+        if str(args[-1]) in detail:  # ffprobe prefixes the message with the full path
+            detail = detail.replace(str(args[-1]), "").lstrip(": ")
         raise CorruptVideoError(
-            "cannot read video: " + (msg[-1] if msg else f"ffprobe exit code {proc.returncode}")
+            f"cannot read video '{name}': the file is damaged or incomplete ({detail})"
         )
     return proc.stdout
 
@@ -251,3 +255,31 @@ def probe_video(path: str | Path, with_timestamps: bool = True, timeout: float =
         truncation_suspected=truncation_suspected,
     )
     return ProbeResult(info=info, pts=pts)
+
+
+def probe_video_opencv(path: str | Path) -> ProbeResult:
+    """Metadata from OpenCV only, for machines without ffmpeg/ffprobe. Less reliable:
+    CAP_PROP_FPS is the container's average rate on variable-frame-rate files and the frame
+    count can be an estimate; per-frame timestamps are taken from the decoder instead
+    (no container timestamp list, no truncation check)."""
+    import cv2
+
+    path = Path(path)
+    if not path.is_file():
+        raise VideoError(f"video not found: {path}")
+    cap = cv2.VideoCapture(str(path))
+    if not cap.isOpened():
+        raise CorruptVideoError(f"'{path.name}' cannot be opened as a video")
+    try:
+        fps = float(cap.get(cv2.CAP_PROP_FPS) or 0)
+        n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
+        w, h = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        ok, _ = cap.read()
+    finally:
+        cap.release()
+    if not ok or w <= 0 or h <= 0 or fps <= 0:
+        raise CorruptVideoError(f"'{path.name}' contains no decodable video frames")
+    info = VideoInfo(source_path=str(path.resolve()), width=w, height=h, fps_nominal=round(fps, 4),
+                     frame_count=n or None, duration_s=round(n / fps, 4) if n else None,
+                     file_size_bytes=path.stat().st_size, fingerprint=fingerprint(path))
+    return ProbeResult(info=info, pts=None)

@@ -103,6 +103,19 @@ class EvaluationConfig(BaseModel):
     match_subtype: bool = False
 
 
+class FpsServiceConfig(BaseModel):
+    """Prototype FPS analysis service (CLI `main.py analyze` and `main.py --gui`)."""
+
+    target_fps: float = Field(default=60.0, gt=0, description="FPS the game is expected to hold (30 or 60)")
+    drop_ratio: float = Field(default=0.75, gt=0, lt=1, description="drop if effective FPS < ratio x target")
+    freeze_ms: float = Field(default=250.0, gt=0, description="picture held at least this long while moving = freeze")
+    stutter_min_missed: int = Field(
+        default=3, ge=1, description="missed frames within 1 s (isolated, above the drop threshold) = stutter")
+    output_dir: Path = Path("outputs")
+    gui_host: str = "127.0.0.1"
+    gui_port: int = 8765
+
+
 class DatabaseConfig(BaseModel):
     url: str = Field(
         default="postgresql+psycopg://gameqa@localhost:5433/gameqa",
@@ -142,6 +155,7 @@ class Settings(BaseSettings):
     detectors: dict[str, DetectorConfig] = Field(default_factory=dict)
     evidence: EvidenceConfig = Field(default_factory=EvidenceConfig)
     severity: SeverityConfig = Field(default_factory=SeverityConfig)
+    fps_service: FpsServiceConfig = Field(default_factory=FpsServiceConfig)
     database: DatabaseConfig = Field(default_factory=DatabaseConfig)
     api: ApiConfig = Field(default_factory=ApiConfig)
     evaluation: EvaluationConfig = Field(default_factory=EvaluationConfig)

@@ -32,10 +32,10 @@
     "declared_duration_s": 20.0,
     "truncation_suspected": false
   },
-  "generated_at": "2026-11-06T21:21:12.080397Z",
+  "generated_at": "2026-11-07T17:59:33.384499Z",
   "detections": [
     {
-      "id": "fcfcdbd2e482401dab265a3225626f02",
+      "id": "45d059ec38f14a4a818742972776cdfa",
       "category": "fps_drop",
       "subtype": "frozen_frame",
       "detector": "fps_drop",
@@ -53,15 +53,17 @@
       "metrics": {
         "hold_ms": 433.3,
         "held_frames": 1,
-        "motion_mad_around": 2.05
+        "motion_mad_around": 2.05,
+        "recurrence_count": 2,
+        "recurrence_index": 1
       },
-      "severity": null,
-      "severity_reason": null,
-      "occurrence_group": null,
+      "severity": "medium",
+      "severity_reason": "performance issue (affects gameplay)",
+      "occurrence_group": "a12840c8f402",
       "evidence": null
     },
     {
-      "id": "5f8a084d6af545c4a3c9898e486d9f3f",
+      "id": "1ff188ed38cb4f3a999b9affcebff016",
       "category": "fps_drop",
       "subtype": "frozen_frame",
       "detector": "fps_drop",
@@ -79,15 +81,17 @@
       "metrics": {
         "hold_ms": 733.3,
         "held_frames": 1,
-        "motion_mad_around": 3.39
+        "motion_mad_around": 3.39,
+        "recurrence_count": 2,
+        "recurrence_index": 2
       },
-      "severity": null,
-      "severity_reason": null,
-      "occurrence_group": null,
+      "severity": "medium",
+      "severity_reason": "performance issue (affects gameplay)",
+      "occurrence_group": "a12840c8f402",
       "evidence": null
     },
     {
-      "id": "87508025d3e84e538b80c53368d124cb",
+      "id": "e3907bad9fa046f1831ffe01271a7bd3",
       "category": "fps_drop",
       "subtype": "fps_drop",
       "detector": "fps_drop",
@@ -106,15 +110,17 @@
         "min_effective_fps": 20.0,
         "target_fps": 60.0,
         "threshold_fps": 45.0,
-        "mean_score": 0.524
+        "mean_score": 0.524,
+        "recurrence_count": 2,
+        "recurrence_index": 1
       },
-      "severity": null,
-      "severity_reason": null,
-      "occurrence_group": null,
+      "severity": "high",
+      "severity_reason": "performance issue (affects gameplay); effective 20 FPS < 50% of 60 FPS target (severe)",
+      "occurrence_group": "41fa7acc22e7",
       "evidence": null
     },
     {
-      "id": "74237ab76be54a0d8b358cbc2c8ac84d",
+      "id": "cefd901b48014a138f62f0a86d17e01d",
       "category": "fps_drop",
       "subtype": "fps_drop",
       "detector": "fps_drop",
@@ -133,11 +139,13 @@
         "min_effective_fps": 30.0,
         "target_fps": 60.0,
         "threshold_fps": 45.0,
-        "mean_score": 0.45
+        "mean_score": 0.45,
+        "recurrence_count": 2,
+        "recurrence_index": 2
       },
-      "severity": null,
-      "severity_reason": null,
-      "occurrence_group": null,
+      "severity": "medium",
+      "severity_reason": "performance issue (affects gameplay)",
+      "occurrence_group": "41fa7acc22e7",
       "evidence": null
     }
   ]

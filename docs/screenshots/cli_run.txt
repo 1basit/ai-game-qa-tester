@@ -1,0 +1,41 @@
+
+AI Game QA Tester — FPS analysis
+  video : evaluation/videos/YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hands-Clipping-Into-Walls-in-Unity-URP-SRP_001_1080p.mp4
+  target: 60 FPS (drop < 45 FPS, freeze >= 250 ms, stutter >= 3 missed/s)
+
+    0%  checking file
+   10%  analysing frame 720 of ~11,955
+   20%  analysing frame 2,160 of ~11,955
+   31%  analysing frame 3,600 of ~11,955
+   41%  analysing frame 5,040 of ~11,955
+   51%  analysing frame 6,480 of ~11,955
+   61%  analysing frame 7,920 of ~11,955
+   72%  analysing frame 9,360 of ~11,955
+   82%  analysing frame 10,800 of ~11,955
+   92%  computing statistics
+  100%  done
+  writing results and Word report ...
+
+  VIDEO
+    1920x1080, 199.25 s, 11,955 frames, h264
+    nominal 60 FPS | average 60.0 FPS | constant frame rate
+
+  FRAME RATE (while the picture moves)
+    effective FPS  median 57.0 | mean 53.9 | min 5.0
+    frame time     p50 16.67 ms | p99 33.33 ms | 1% low 30.0 FPS
+    measurable     9% of the video
+
+  EVENTS  freezes 1 | drops 0 | stutters 4 | missed frames while moving 130
+    STUTTER 00:00.750 - 00:02.750  Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS
+    STUTTER 00:04.750 - 00:07.250  Uneven frame pacing: up to 9 missed frames per second while the average stayed at 51 FPS
+    STUTTER 00:08.750 - 00:12.750  Uneven frame pacing: up to 5 missed frames per second while the average stayed at 55 FPS
+    STUTTER 00:14.500 - 00:18.250  Uneven frame pacing: up to 6 missed frames per second while the average stayed at 54 FPS
+    FREEZE  00:18.367 - 00:19.417  Picture held for 1050 ms while the scene was moving
+
+  RESULT  Detected 1 freeze(s), 4 stutter period(s) in the 9% of the video that could be measured.
+
+  output folder: /Users/amh/Desktop/FYP/outputs/20261107-223236_YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hand
+  Word report  : /Users/amh/Desktop/FYP/outputs/20261107-223236_YTDown.com_YouTube_Media_J8HB1-IQFxc_How-to-fix-Weapons-Hand/FPS_ANALYSIS_REPORT.docx
+  note: effective FPS is measured from the recording; it is not the game's internal FPS.
+
+exit=0

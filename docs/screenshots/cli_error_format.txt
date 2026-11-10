@@ -1,0 +1,9 @@
+
+AI Game QA Tester — FPS analysis
+  video : notes.mov
+  target: 60 FPS (drop < 45 FPS, freeze >= 250 ms, stutter >= 3 missed/s)
+
+    0%  checking file
+
+  ERROR: 'notes.mov': format .mov is not supported. Accepted formats: .avi, .mkv, .mp4
+exit=2

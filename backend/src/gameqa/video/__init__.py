@@ -1,6 +1,6 @@
 """Video processing engine (Phase 2): validation, metadata, streaming decode."""
 
-from gameqa.video.probe import ProbeResult, probe_video, timing_stats
+from gameqa.video.probe import ProbeResult, probe_video, probe_video_opencv, timing_stats
 from gameqa.video.stream import FrameStream, Normaliser, StreamStats, read_frame_at
 from gameqa.video.validation import sniff_container, validate_file, validate_filename
 
@@ -11,6 +11,7 @@ __all__ = [
     "ProbeResult",
     "StreamStats",
     "probe_video",
+    "probe_video_opencv",
     "read_frame_at",
     "sniff_container",
     "timing_stats",

@@ -16,37 +16,37 @@
       "fp_per_minute": 0.0,
       "matches": [
         {
-          "detection_id": "ecce065f1f6e4816b64a66bc7339f560",
+          "detection_id": "ade23084e361490c868ee99b3ca8d9a4",
           "gt_index": 0,
           "tiou": 1.0,
           "peak_error_s": -0.15
         },
         {
-          "detection_id": "5015f4e8ca054cb495414209a07798e8",
+          "detection_id": "c9885bef99bf4ab6ab22b6b930a94faa",
           "gt_index": 2,
           "tiou": 1.0,
           "peak_error_s": -0.3
         },
         {
-          "detection_id": "ea1acc1246dd435fad99127dcff1a562",
+          "detection_id": "cb304cba02c0495fa52fe5905977ba91",
           "gt_index": 4,
           "tiou": 1.0,
           "peak_error_s": -0.5
         },
         {
-          "detection_id": "da64993f14f14d958eef1383c78252b3",
+          "detection_id": "d22e48c9e16546388b611b71251647ab",
           "gt_index": 3,
           "tiou": 0.75,
           "peak_error_s": -0.25
         },
         {
-          "detection_id": "9e3feaa9b9d14e24b3ee1b7043f1e4fd",
+          "detection_id": "139b5ceb144043c396fecdd1734c9dde",
           "gt_index": 1,
           "tiou": 0.6,
           "peak_error_s": -0.25
         },
         {
-          "detection_id": "0e429ff80a564f1eaae24c38a549611e",
+          "detection_id": "00234c88d8d04990af7c2b2b6daf1ab9",
           "gt_index": 5,
           "tiou": 0.6,
           "peak_error_s": -0.25
@@ -56,5 +56,6 @@
       "false_negatives": []
     }
   },
-  "unscored_predictions": 0
+  "unscored_predictions": 0,
+  "ignored_predictions": 0
 }

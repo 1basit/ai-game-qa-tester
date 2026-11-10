@@ -16,25 +16,25 @@
       "fp_per_minute": 0.0,
       "matches": [
         {
-          "detection_id": "5f8a084d6af545c4a3c9898e486d9f3f",
+          "detection_id": "1ff188ed38cb4f3a999b9affcebff016",
           "gt_index": 1,
           "tiou": 0.9545,
           "peak_error_s": -0.3667
         },
         {
-          "detection_id": "fcfcdbd2e482401dab265a3225626f02",
+          "detection_id": "45d059ec38f14a4a818742972776cdfa",
           "gt_index": 0,
           "tiou": 0.9231,
           "peak_error_s": -0.2167
         },
         {
-          "detection_id": "74237ab76be54a0d8b358cbc2c8ac84d",
+          "detection_id": "cefd901b48014a138f62f0a86d17e01d",
           "gt_index": 3,
           "tiou": 0.75,
           "peak_error_s": -0.25
         },
         {
-          "detection_id": "87508025d3e84e538b80c53368d124cb",
+          "detection_id": "e3907bad9fa046f1831ffe01271a7bd3",
           "gt_index": 2,
           "tiou": 0.6,
           "peak_error_s": -0.25
@@ -44,5 +44,6 @@
       "false_negatives": []
     }
   },
-  "unscored_predictions": 0
+  "unscored_predictions": 0,
+  "ignored_predictions": 0
 }

@@ -19,6 +19,8 @@ dependencies = [
     "pydantic-settings>=2.3",
     "pyyaml>=6.0",
     "scikit-image>=0.24",            # SSIM (texture pop-in)
+    "matplotlib>=3.8",               # charts in reports and the prototype GUI
+    "python-docx>=1.1",              # Word (.docx) reports and project documentation
 ]
 
 [project.optional-dependencies]
@@ -36,3 +38,6 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
+
+[tool.setuptools.package-data]
+gameqa = ["webgui/static/*"]

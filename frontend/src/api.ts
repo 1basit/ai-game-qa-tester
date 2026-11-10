@@ -21,6 +21,7 @@ export interface Detection {
   start_time_s: number; end_time_s: number; peak_time_s: number; start_frame: number; end_frame: number;
   peak_frame: number; confidence: number; bbox: BBox | null; description: string;
   severity: Severity | null; severity_reason: string | null; metrics: Record<string, unknown>;
+  occurrence_group: string | null; // same defect recurring (same subtype, same screen area)
   media: { screenshot: string | null; screenshot_marked: string | null; clip: string | null };
 }
 

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPS Analysis</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">AI Game QA Tester <span>· FPS analysis prototype</span></div>
+    <div class="local">Runs locally · no login</div>
+  </header>
+
+  <main>
+    <!-- 1. upload -->
+    <section id="upload" class="card">
+      <h1>Analyse a gameplay video</h1>
+      <p class="muted">Upload a recording (.mp4, .mkv or .avi). The analysis measures frame pacing in the video:
+        frame intervals, repeated frames, freezes, FPS drops and stutter.</p>
+      <div id="drop" class="drop" tabindex="0" role="button" aria-label="Choose a video file">
+        <div class="drop-title" id="drop-title">Drop a video here or click to choose</div>
+        <div class="muted small" id="drop-sub">.mp4 · .mkv · .avi</div>
+        <input id="file" type="file" accept=".mp4,.mkv,.avi" hidden />
+      </div>
+      <div class="settings">
+        <label>Target frame rate
+          <select id="target">
+            <option value="60">60 FPS</option><option value="30">30 FPS</option>
+            <option value="120">120 FPS</option><option value="144">144 FPS</option>
+          </select>
+        </label>
+        <details>
+          <summary>Advanced thresholds</summary>
+          <div class="grid3">
+            <label>FPS drop below (× target)<input id="drop_ratio" type="number" step="0.05" min="0.05" max="0.95" /></label>
+            <label>Freeze at least (ms)<input id="freeze_ms" type="number" step="50" min="50" /></label>
+            <label>Stutter at (missed frames / s)<input id="stutter" type="number" step="1" min="1" /></label>
+          </div>
+        </details>
+      </div>
+      <div class="row">
+        <button id="analyze" class="primary" disabled>Analyze Video</button>
+        <span id="upload-error" class="error" role="alert"></span>
+      </div>
+    </section>
+
+    <!-- 2. progress -->
+    <section id="progress" class="card hidden" aria-live="polite">
+      <h2 id="progress-title">Analysing…</h2>
+      <div class="bar"><div id="bar"></div></div>
+      <div class="muted small" id="progress-msg">starting</div>
+    </section>
+
+    <!-- 3. results -->
+    <section id="results" class="hidden">
+      <div class="card verdict">
+        <div>
+          <div class="muted small" id="r-video"></div>
+          <h2 id="r-verdict"></h2>
+          <div class="muted small">Effective FPS = new pictures per second in the recording while the picture moves.
+            It is not the game's internal rendering FPS.</div>
+        </div>
+        <div class="actions">
+          <a id="r-report" class="button primary" download>Download Word report</a>
+          <a id="r-json" class="button" download>JSON</a>
+          <button id="again" class="button">Analyse another video</button>
+        </div>
+      </div>
+
+      <div class="stats" id="r-stats"></div>
+
+      <div class="card">
+        <h3>Effective frame rate over time</h3>
+        <img id="c-eff" alt="Effective FPS over time with target and drop threshold" />
+        <p class="muted small">Gaps = not measurable (the picture was not moving). Shaded: <span class="tag freeze">freeze</span>
+          <span class="tag fps_drop">FPS drop</span> <span class="tag stutter">stutter</span></p>
+      </div>
+
+      <div class="card">
+        <h3>Detected events</h3>
+        <div id="r-events" class="scroll-x"></div>
+      </div>
+
+      <div class="two">
+        <div class="card"><h3>Frame intervals</h3><img id="c-int" alt="Frame presentation intervals" /></div>
+        <div class="card"><h3>Repeated frames</h3><img id="c-chg" alt="Frame-to-frame change with repeated frames" /></div>
+      </div>
+
+      <div class="two">
+        <div class="card"><h3>Video</h3><table class="kv" id="r-meta"></table></div>
+        <div class="card"><h3>Limitations</h3><ul id="r-lim" class="small"></ul></div>
+      </div>
+      <p class="muted small" id="r-folder"></p>
+    </section>
+
+    <section id="failed" class="card hidden">
+      <h2>Analysis failed</h2>
+      <p class="error" id="f-msg"></p>
+      <button id="again2" class="button">Try another video</button>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

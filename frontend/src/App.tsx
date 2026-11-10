@@ -296,7 +296,9 @@ function Review({ jobId }: { jobId: string }) {
   const [sevs, setSevs] = useState<string[]>([]);
   const { job, rows, err } = useJobDetections(jobId, cats, sevs);
   const [sel, setSel] = useState<Detection | null>(null);
-  useEffect(() => { if (rows && (!sel || !rows.find((r) => r.id === sel.id))) setSel(rows[0] || null); }, [rows]);
+  const [group, setGroup] = useState<string | null>(null); // "show all occurrences of this issue"
+  const shown = useMemo(() => (rows && group ? rows.filter((r) => r.occurrence_group === group) : rows), [rows, group]);
+  useEffect(() => { if (shown && (!sel || !shown.find((r) => r.id === sel.id))) setSel(shown[0] || null); }, [shown]);
   return (
     <div className="grid">
       <div className="row" style={{ justifyContent: "space-between" }}>
@@ -305,18 +307,24 @@ function Review({ jobId }: { jobId: string }) {
       </div>
       {job?.warnings?.length ? <div className="panel small"><strong>Warnings:</strong> {job.warnings.join(" · ")}</div> : null}
       <Filters cats={cats} setCats={setCats} sevs={sevs} setSevs={setSevs} />
+      {group && shown && (
+        <div className="panel row small" role="status">
+          Showing the {shown.length} occurrences of one recurring issue.
+          <button className="btn" onClick={() => setGroup(null)}>Show all detections</button>
+        </div>)}
       {err && <p className="error">{err}</p>}
       <div className="grid cols-review">
         <section className="panel list-scroll" aria-label="Detections">
-          {!rows ? <p className="muted">Loading…</p> : rows.length === 0 ? <p className="muted">No detections match.</p> : (
+          {!shown ? <p className="muted">Loading…</p> : shown.length === 0 ? <p className="muted">No detections match.</p> : (
             <table>
-              <thead><tr><th>Time</th><th>Category</th><th>Duration</th><th>Severity</th></tr></thead>
-              <tbody>{rows.map((d) => (
+              <thead><tr><th>Time</th><th>Category</th><th>Duration</th><th>Seen</th><th>Severity</th></tr></thead>
+              <tbody>{shown.map((d) => (
                 <tr key={d.id} className={`clickable ${sel?.id === d.id ? "selected" : ""}`} tabIndex={0}
                   onClick={() => setSel(d)} onKeyDown={(e) => e.key === "Enter" && setSel(d)} aria-selected={sel?.id === d.id}>
                   <td>{fmtTime(d.start_time_s)}</td>
                   <td>{CATEGORY_LABEL[d.category]}<div className="muted small">{d.subtype.replace(/_/g, " ")}</div></td>
                   <td>{(d.end_time_s - d.start_time_s).toFixed(2)} s</td>
+                  <td>{recurrence(d) > 1 ? <strong title="same issue seen this many times in the video">{recurrence(d)}×</strong> : <span className="muted">once</span>}</td>
                   <td><SeverityBadge s={d.severity} /></td>
                 </tr>))}</tbody>
             </table>)}
@@ -334,6 +342,10 @@ function Review({ jobId }: { jobId: string }) {
                 <dt>What was seen</dt><dd>{sel.description}</dd>
                 <dt>Time</dt><dd>{fmtTime(sel.start_time_s)} – {fmtTime(sel.end_time_s)} (peak {fmtTime(sel.peak_time_s)})</dd>
                 <dt>Frames</dt><dd>{sel.start_frame} – {sel.end_frame}</dd>
+                <dt>Recurrence</dt><dd>{recurrence(sel) > 1 ? (
+                  <span className="row">Seen {recurrence(sel)} times in this video (this is #{String(sel.metrics.recurrence_index ?? "?")})
+                    {group !== sel.occurrence_group && <button className="btn" onClick={() => setGroup(sel.occurrence_group)}>Show all {recurrence(sel)}</button>}
+                  </span>) : "Seen once in this video"}</dd>
                 <dt className="small">Detector</dt><dd className="small">{sel.detector} v{sel.detector_version}</dd>
                 <dt className="small">Confidence</dt><dd className="small">{(sel.confidence * 100).toFixed(0)}%</dd>
               </dl>
@@ -343,6 +355,8 @@ function Review({ jobId }: { jobId: string }) {
     </div>
   );
 }
+
+const recurrence = (d: Detection) => Number(d.metrics.recurrence_count ?? 1);
 
 // ------------------------------------------------------------------ report summary & export (8.4)
 function Report({ jobId }: { jobId: string }) {

@@ -30,6 +30,14 @@ def env(tmp_path):
 
     db_url = os.environ.get("GAMEQA_TEST_DATABASE_URL") or f"sqlite:///{tmp_path / 'test.db'}"
     if not db_url.startswith("sqlite"):
+        # Safety: these tests DROP ALL TABLES. Running them against the real database once
+        # wiped the demo accounts and results, so only databases named *_test are allowed.
+        from sqlalchemy.engine import make_url
+
+        name = make_url(db_url).database or ""
+        if not name.endswith("_test"):
+            pytest.exit(f"refusing to run destructive API tests on database '{name}': "
+                        "use a dedicated database whose name ends in '_test'", returncode=2)
         eng = make_engine(db_url)
         Base.metadata.drop_all(eng)  # fresh schema per test
         eng.dispose()

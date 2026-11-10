@@ -85,6 +85,7 @@ class FpsDropDetector(Detector):
 
     def start(self, video: VideoInfo) -> None:
         super().start(video)
+        self.timeline: dict = {}
         self._t: list[float] = []
         self._idx: list[int] = []
         self._mad: list[float] = []
@@ -173,6 +174,29 @@ class FpsDropDetector(Detector):
         moving = (mad >= p.motion_mad) | missed
         new_picture = ~missed
 
+        # VFR recordings: an interval of k x the normal interval hides k - 1 frames. They are
+        # treated exactly like k - 1 repeated frames of a CFR recording (Phase 6 fix): missed
+        # renders only when the same abrupt-edge + sustained-motion rule holds; otherwise the
+        # gap is a still stretch (e.g. a recorder that writes no frame while nothing changes),
+        # which lowers the moving share of its windows instead of their effective FPS.
+        gap_virtual = np.zeros(n, dtype=np.int64)  # frames hidden in the interval before frame j
+        gap_missing = np.zeros(n, dtype=np.int64)  # ... of which missed renders during motion
+        if n > 1 and base_dt > 0:
+            gap_virtual[1:] = np.maximum(np.rint(np.diff(t) / base_dt).astype(np.int64) - 1, 0)
+            for j in np.flatnonzero(gap_virtual):
+                if j < 2 or dup[j]:
+                    continue  # (a repeat after a gap belongs to a CFR-style hold handled above)
+                abrupt = mad[j - 1] >= p.motion_mad and mad[j] >= p.motion_mad
+                before, after = sustained(j - 1, -1), sustained(j, +1)
+                if abrupt and np.isfinite(before) and np.isfinite(after) and min(before, after) >= p.motion_mad:
+                    gap_missing[j] = gap_virtual[j]
+        # the hidden frames at their own times inside each gap (where a CFR file would have them)
+        gv = np.flatnonzero(gap_virtual)
+        v_times = np.concatenate([t[j - 1] + base_dt * np.arange(1, gap_virtual[j] + 1) for j in gv]) if len(gv) else np.zeros(0)
+        v_missed = np.concatenate([np.full(gap_virtual[j], gap_missing[j] > 0) for j in gv]) if len(gv) else np.zeros(0, bool)
+        vm_times = v_times[v_missed]  # both sorted (gaps are in time order)
+        windows: list[dict] = []  # timeline export (prototype service: charts, statistics, stutter)
+
         # Sliding windows of effective FPS (new pictures per second), moving windows only
         target = self._target()
         threshold = p.drop_ratio * target
@@ -196,9 +220,19 @@ class FpsDropDetector(Detector):
             sl = slice(lo, hi)
             n_windows += 1
             centre = w0 + p.window_s / 2
-            if hi - lo >= 2 and moving[sl].mean() >= p.min_moving_fraction:
+            # frames in the window as a CFR recording would have them (VFR gaps = virtual repeats)
+            v_all = int(np.searchsorted(v_times, w1, "left") - np.searchsorted(v_times, w0, "left"))
+            v_mis = int(np.searchsorted(vm_times, w1, "left") - np.searchsorted(vm_times, w0, "left"))
+            n_frames = (hi - lo) + v_all
+            n_missed = int(missed[sl].sum()) + v_mis
+            n_moving = int(moving[sl].sum()) + v_mis
+            measurable = hi - lo >= 2 and n_moving / n_frames >= p.min_moving_fraction
+            windows.append({"start_s": float(w0), "end_s": float(w1), "measurable": bool(measurable),
+                            "effective_fps": (n_frames - n_missed) / p.window_s if measurable else None,
+                            "missed_frames": n_missed})
+            if measurable:
                 measured += 1
-                eff = float(new_picture[sl].sum()) / p.window_s
+                eff = (n_frames - n_missed) / p.window_s
                 eff_values.append(eff)
                 active = eff < threshold
                 ci = min(max(lo, int(np.searchsorted(t, centre))), n - 1)
@@ -266,6 +300,16 @@ class FpsDropDetector(Detector):
             )
 
         detections.sort(key=lambda d: d.start_time_s)
+        # Per-frame / per-window data for the FPS analysis service (charts, statistics,
+        # stutter analysis). Plain lists so it can be saved as JSON / CSV.
+        self.timeline = {
+            "time_s": t.tolist(), "frame_index": idx.tolist(),
+            "mad": [None if not np.isfinite(x) else float(x) for x in mad],
+            "repeated": dup.tolist(), "missed": missed.tolist(), "moving": moving.tolist(),
+            "gap_missing": gap_missing.tolist(), "gap_virtual": gap_virtual.tolist(), "base_interval_s": base_dt,
+            "target_fps": target, "threshold_fps": threshold, "windows": windows,
+            "params": p.model_dump(),
+        }
         self.summary = {
             "recording_fps": round(recording_fps, 2),
             "target_fps": target,

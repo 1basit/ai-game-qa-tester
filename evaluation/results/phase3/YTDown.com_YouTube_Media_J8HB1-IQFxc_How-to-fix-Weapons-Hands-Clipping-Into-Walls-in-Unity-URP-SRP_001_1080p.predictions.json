@@ -32,10 +32,10 @@
     "declared_duration_s": 199.25,
     "truncation_suspected": false
   },
-  "generated_at": "2026-11-06T21:21:35.211774Z",
+  "generated_at": "2026-11-07T17:59:58.101278Z",
   "detections": [
     {
-      "id": "d9f5f597c3254aebb712027f9697d9f5",
+      "id": "f6f9043f291d4e68b4e6a5b6afb32667",
       "category": "fps_drop",
       "subtype": "frozen_frame",
       "detector": "fps_drop",
@@ -53,11 +53,13 @@
       "metrics": {
         "hold_ms": 1050.0,
         "held_frames": 63,
-        "motion_mad_around": 1.09
+        "motion_mad_around": 1.09,
+        "recurrence_count": 1,
+        "recurrence_index": 1
       },
-      "severity": null,
-      "severity_reason": null,
-      "occurrence_group": null,
+      "severity": "high",
+      "severity_reason": "performance issue (affects gameplay); picture frozen 1.1 s >= 1 s (severe)",
+      "occurrence_group": "8080f9b87299",
       "evidence": null
     }
   ]

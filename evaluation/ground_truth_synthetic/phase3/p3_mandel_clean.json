@@ -8,5 +8,6 @@
   "annotator": "injection script",
   "source": "generated: ffmpeg mandelbrot zoom",
   "synthetic": true,
-  "events": []
+  "events": [],
+  "ignore": []
 }

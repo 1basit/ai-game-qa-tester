@@ -8,5 +8,6 @@
   "annotator": "injection script",
   "source": "public: YouTube J8HB1-IQFxc gameplay 0-18.5 s",
   "synthetic": true,
-  "events": []
+  "events": [],
+  "ignore": []
 }

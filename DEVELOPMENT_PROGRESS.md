@@ -607,3 +607,234 @@ Reproducible install: `backend/scripts/install.sh`; run instructions in `README.
 3. Run the SRS 5.2 usability study with people outside the group.
 4. Replace the self-signed certificate for any shared demo; set a real `GAMEQA_API__SECRET_KEY`.
 5. Optional: Alembic migrations, scheduled backups, login rate limiting.
+
+### Post-release fixes (2026-11-07, afternoon)
+- **Incident:** running the API tests against PostgreSQL with the *real* `gameqa` database
+  wiped it (the test fixture drops all tables per test) — the demo accounts, project and job
+  were lost, so sign-in with `data/demo-credentials.txt` failed. Fix: the tests now refuse any
+  database whose name does not end in `_test` (verified: refused on `gameqa`, 16 passed on
+  `gameqa_test`). Demo accounts recreated with the same passwords; orphaned files of the lost
+  job removed; the video re-analysed — identical result (37 detections: 1 High, 32 Medium, 4 Low).
+- **Recurrence visible in the dashboard:** "Seen" column (`once` / `N×`), a *Recurrence* line
+  ("Seen N times in this video (this is #k)") and **Show all N** to list only that issue's
+  occurrences. Checked in the browser on the real job (26× editor-cut transitions; freeze once).
+- `docs/USER_GUIDE.md`: step-by-step guide (start, sign in, upload, queue, review, recurrence,
+  export, stop, troubleshooting).
+
+---
+
+# Prototype track (FPS analysis service with CLI + local GUI)
+
+Requested 2026-11-07 for the supervisor demo: a simple FPS-analysis prototype usable from the
+terminal (`python main.py analyze --video ...`) and a no-login local web page
+(`python main.py --gui`), with Word (.docx) reports. Built on the existing, validated video
+engine and FPS detector; the full system (login dashboard, other detectors) is untouched.
+
+| Prototype phase | Status |
+|---|---|
+| P1 Foundation | **Done** |
+| P2 FPS analysis engine | **Verified** (synthetic held-out; real video reviewed) |
+| P3 CLI | **Verified** (real video + error cases; Word report checked visually) |
+| P4 Local web GUI | **Verified** (real video in the browser; same results as CLI) |
+| P5 Documentation (.docx) | **Done** (generated from real runs; checked by read-back + page-1 render) |
+| P6 Testing & demo | **Verified** (18-case test set on CLI + GUI; 1 bug fixed; demo guide rehearsed) |
+
+## P1 — Foundation · Done (2026-11-07)
+`python-docx` 1.2.0 installed (+ matplotlib declared); `fps_service` section in
+`config/default.yaml` (target FPS 60, drop ratio 0.75, freeze 250 ms, stutter ≥ 3 missed/s,
+output folder `outputs/`, GUI 127.0.0.1:8765); `outputs/` git-ignored.
+
+## P2 — FPS analysis engine · Verified (2026-11-07)
+`backend/src/gameqa/fps_service/` — `analysis.py` (`analyze_video()`: the single engine for CLI
+and GUI), `charts.py` (3 PNG charts), `store.py` (analysis.json, timeline.csv, windows.json,
+charts). `detectors/fps.py` now also exposes its per-frame timeline (detection logic unchanged:
+its 12 tests still pass). `video/probe.py`: OpenCV-only metadata fallback when ffprobe is absent.
+New: **stutter** = ≥ 3 isolated missed frames in a 1 s window while effective FPS ≥ drop
+threshold, ≥ 2 consecutive windows, not overlapping a freeze/drop. Statistics: average FPS from
+timestamps, frame-interval stats, effective FPS (mean/median/min/p5), frame-time percentiles and
+"1 % low" FPS = 1 / p99 frame time, measurable fraction.
+
+**Synthetic evaluation** (`backend/scripts/eval_prototype_fps.py`; clean generated bases —
+the real gameplay already stutters so it cannot be a stutter base; thresholds fixed before data):
+| Set | Stutter | Freeze | FPS drop |
+|---|---|---|---|
+| Tuning (seed 0, + 2 clean controls) | 5/5, 0 FP | 2/2, 0 FP | 2/2, 0 FP |
+| **Held-out (seeds 1–3, CRF 23)** | **11/11, 0 FP** | **8/9, 0 FP** | **7/7, 0 FP** |
+Missed freeze: its first repeated frame differed by 0.68 after CRF 23 compression (> 0.25
+repeat threshold), so the hold appeared to start after a "slowing" frame and the abrupt-edge
+rule rejected it. Not tuned on the held-out set; recorded as a limitation.
+
+**Real video** (v1, 199 s 1080p60 CFR): 26 s (7.6× real time). Average FPS 60.0 (timestamps
+perfectly regular: CFR); measurable 9 % (only the 19 s of gameplay moves); effective FPS
+mean 53.9 / median 57 / p5 27.4; frame times p50 16.67 ms, p99 33.3 ms → 1 % low 30 FPS;
+130 missed frames while moving; events: 4 stutter periods covering most of the gameplay
+(up to 5–9 missed frames/s, 51–55 FPS) and 1 freeze at 18.37 s. Review: the stutter matches
+the isolated exact repeats seen during smooth motion in Phase 3 (real uneven pacing in the
+recording — whether caused by the game, the recorder or the tutorial's editing cannot be told
+from the video); the freeze is the known false positive before the editing transition.
+
+Tests: `tests/test_fps_service.py` (12): missing / unsupported / text-as-mp4 / damaged files,
+clean CFR statistics, VFR gap = freeze, stutter vs drop separation, configurable thresholds,
+OpenCV-only fallback, saved files (JSON, CSV 76 rows, 3 PNG charts), safe output names, too-short
+video. Full suite: **191 passed, 3 xfailed**.
+
+Limitations: true game FPS not recoverable; recording rate caps measurement; still stretches
+unmeasurable; edits/intentional pauses look like freezes; heavy compression can hide the first
+frame of a freeze (1/9 held-out); only one real video available (needs more real footage).
+
+## P3 — Command-line interface · Verified (2026-11-07)
+`main.py` (project root): `python main.py analyze --video PATH [--target-fps N] [--drop-ratio R]
+[--freeze-ms MS] [--stutter-min-missed K] [--output DIR] [--no-report] [--max-events N] [--quiet]`.
+Calls the shared engine (`gameqa.fps_service`), shows a one-line progress bar in a terminal
+(plain lines when redirected), prints video / frame-rate / events / verdict, writes the output
+folder (`outputs/<date-time>_<video>/`: analysis.json, timeline.csv, windows.json,
+charts/*.png, **FPS_ANALYSIS_REPORT.docx**). Exit codes: 0 ok, 2 invalid input, 3 wrong Python
+environment (prints how to activate `backend/.venv`). `--gui` is accepted and reports that the
+GUI arrives in P4 (now implemented, see P4).
+`fps_service/report_docx.py` (python-docx): title, 9 sections — summary (verdict + key numbers),
+video metadata, settings, frame presentation timing (+ chart), effective FPS and frame times
+(+ 2 charts), colour-coded events table, method (equations), limitations (+ per-video
+warnings), processing — explicit table borders and shaded label column so it renders the same
+in Word, Pages and macOS Quick Look; page numbers in the footer.
+
+Tests run:
+- Real video (199 s): exit 0, 26 s; 4 stutters + 1 freeze, verdict and report path printed;
+  re-run gives identical results.
+- Errors: missing file, `.mov`, text renamed `.mp4`, `--drop-ratio 1.5`, `--target-fps 0` →
+  one-line message, exit 2; missing `--video` → usage error; system Python without packages →
+  activation instructions, exit 3.
+- Terminal progress bar (real TTY via `script`), `--target-fps 30`, `--output`, `--no-report`.
+- Report: rendered with Quick Look (page 1) — first version showed **no table borders** (viewer
+  ignores Word table styles) → explicit borders + shaded key column added and re-checked;
+  later pages verified by reading the file back: events table with colour fills, 3 charts at
+  17 cm, method + limitation bullets. (LibreOffice is not installed — the `soffice` link is
+  broken — so a full-document PDF render was not done.)
+- `tests/test_main_cli.py` (8): report contents, thresholds from the command line, five invalid
+  inputs (exit 2 + message), running exactly as `python main.py analyze ...`. Suite: **199 passed,
+  3 xfailed**.
+
+Limitations: same analysis limits as P2; the report is in English only; only one real video.
+
+## P4 — Local web GUI · Verified (2026-11-07)
+`python main.py --gui [--port N] [--host H] [--no-browser]` starts a local web app on
+**127.0.0.1:8765** and opens the default browser. **No login, no accounts, no database.**
+`backend/src/gameqa/webgui/app.py` (FastAPI): `GET /` page, `GET /api/config`,
+`POST /api/analyze` (upload streamed to disk; extension check → 415, bad setting → 422, size
+limit → 413), `GET /api/jobs/{id}` (status + progress + result), chart PNGs, Word report and
+JSON downloads. One analysis at a time on a background thread; jobs kept in memory; files in
+`outputs/<date-time>_<video>/` (+ `input/` with the uploaded video). A video that turns out
+not to be a video fails with the engine's message and its folder is deleted. If the port is
+taken, it says so and suggests `--port N+1` (exit 2). Listening beyond localhost prints a
+warning (no login).
+`webgui/static/` (`index.html`, `style.css`, `app.js`; no build step, no external scripts):
+upload card (drag-and-drop or click, .mp4/.mkv/.avi, target 60/30/120/144 FPS, advanced
+thresholds), progress bar (upload % then analysis frame counter), results (verdict, Word report
++ JSON downloads, 6 key numbers, effective-FPS chart, events table with timestamps and colour
+tags, frame-interval and repeated-frame charts, video metadata, limitations, saved folder),
+failure card; `#job=<id>` link reopens a result; light and dark mode; phone width.
+
+Tests run:
+- Real video uploaded to the running GUI: progress shown live (e.g. "32 % · analysing frame
+  3,960 of ~11,955"); results **identical to the CLI**: 1 freeze, 0 drops, 4 stutters, median
+  57, 1 % low 30, lowest 5, 9 % measurable, 130 missed frames; 23.8 s analysis; 3 charts load;
+  Word report downloads (148 KB, `FPS_ANALYSIS_REPORT_<video>.docx`); JSON downloads.
+- In the page: `notes.txt` → "not supported" message, button stays disabled; corrupt
+  `broken_recording.mp4` → "Analysis failed: … is not a video file …", no folder left behind.
+- Second `python main.py --gui` while running → port-in-use message, exit 2.
+- Bugs found and fixed in browser testing: (1) changing only the `#job=` link did not switch
+  the page to that job → now follows link changes; (2) on a 375 px phone screen the long video
+  file name pushed the page to 472 px wide → names wrap, the events table scrolls inside its
+  card. Re-checked on phone and desktop width, light and dark.
+- `tests/test_webgui.py` (8): page/config without login, full upload→results flow, **GUI and
+  CLI give identical results**, unsupported format rejected without leftovers, fake video fails
+  and is cleaned up, invalid setting 422 / unknown job 404, browser opened at
+  http://127.0.0.1:port (and not with `--no-browser`), port-in-use message. Suite: **207 passed,
+  3 xfailed**.
+
+Limitations: one analysis at a time; results are kept in memory, so after restarting the GUI
+old `#job=` links say "not found" (the files stay in `outputs/`); uploaded videos are kept in
+`outputs/.../input/` (delete old folders by hand); no login, so it must stay on 127.0.0.1;
+analysis limits as P2.
+
+## P5 — Documentation (.docx) · Done (2026-11-07)
+**`docs/PROJECT_DOCUMENTATION.docx`** (≈ 1.7 MB): title page (university, group, supervisor), status
+legend (Implemented and Tested / In Development / Proposed for Future Phases), contents, the
+**20 required sections**, Appendix A (output files) and B (source files) — 47 tables, 14 figures,
+20 numbered equations. **`docs/FPS_ANALYSIS_REPORT.docx`**: the per-video report of a real CLI
+run on the real gameplay video (copied unchanged from `outputs/20261107-223236_…/`).
+
+Generated, not hand-written, so it can be rebuilt as the project develops:
+- `backend/scripts/capture_gui_screenshots.py` — drives headless Chrome over the DevTools
+  protocol through a **real upload of the real video** (sets the page's file input, clicks
+  Analyze, waits for the real analysis) and saves 8 PNGs (`docs/screenshots/gui_*.png`):
+  start page, file chosen, progress, results, events, charts + metadata, unsupported file,
+  failed analysis.
+- `backend/scripts/build_project_docs.py --run outputs/<run>` — reads `analysis.json` and the
+  charts of that run, the synthetic tuning / held-out tables
+  (`evaluation/results/prototype_fps/report_seeds_*.md`), the pytest log
+  (`docs/screenshots/pytest_full.txt`, refuses to build if tests failed), the captured CLI output
+  (`docs/screenshots/cli_*.txt`), installed package versions and the machine; draws the
+  architecture and pipeline diagrams (matplotlib); renders page 1 of the report with Quick Look.
+  Results of the earlier detectors (texture, animation, NPC, clipping) are quoted from this file
+  and say so.
+
+Small fixes made while capturing the CLI output: errors are now printed after the banner when
+output is redirected (stdout flushed first); `--gui` without FastAPI now says how to install it
+(the old message still said "not available yet (Phase 4)").
+
+Checks: document read back with python-docx — all 20 section headings, 23 table / 14 figure
+captions, no empty or "None" values; one wrong cross-reference found ("Figures 3–6" → now
+computed: 2–5); diagrams and all screenshots inspected; page 1 rendered with Quick Look.
+Not done: a full page-by-page render (LibreOffice not installed; Quick Look renders only page 1;
+Microsoft Word was not scripted to avoid opening it on the user's screen) → open it in Word to
+review pagination. Suite at build time: **207 passed, 3 xfailed**.
+
+Limitations: the per-video report sample is from the only real video; screenshots are
+macOS/Chrome light mode; Windows setup instructions are untested.
+
+## P6 — Prototype testing and demonstration · Verified (2026-11-07)
+`backend/scripts/phase6_test.py` builds a test set and runs every case through the **real CLI**
+(`python main.py analyze`, subprocess) **and the running GUI** (same upload endpoint as the
+page), compares the two, and writes `evaluation/results/phase6/{results.json,report.md}`.
+Only one real gameplay recording exists, so the videos are **derived from it** (labelled as
+such): 20 s gameplay clip (.mp4 and .mkv), 720p AVI (MPEG-4 Part 2), 30 FPS (target 30), VFR
+(repeats removed with mpdecimate), static editor segment, file cut to half its bytes, 2-frame
+file, non-ASCII/space file name, and two copies with a defect injected at a known time; plus 6
+invalid inputs (missing path, .txt, .mov, text renamed .mp4, 0-byte .mp4, folder named .mp4).
+
+Results (final run): **CLI and GUI identical on all 10 analysable videos**; injected freeze
+found at 10.00–10.80 s (injected 10.0–10.8), injected 20 FPS drop found at 3.50–6.75 s
+(injected 4.0–6.5); MP4 / MKV / non-ASCII name give the same result as the original; static
+segment: "Not measurable"; damaged, 2-frame and all invalid inputs: one-line reason, exit 2,
+GUI 415 or failed job, no leftover files.
+
+**Bug found and fixed (VFR):** the VFR copy reported an FPS drop at 8.5–9.75 s (26 FPS) that
+the original did not: a 0.68 s moment where the player stood still (41 repeated frames in the
+original, which the CFR analysis correctly treats as not measurable) became one timestamp gap,
+and windows counted every gap as missing pictures without the motion test. Also, all hidden
+frames were credited to the frame after the gap, so windows covering the gap missed them.
+Fix (`detectors/fps.py`): hidden frames are placed at their own times inside the gap and
+treated exactly like repeated CFR frames (missed only if the abrupt-edge + sustained-motion test
+passes, otherwise they lower the window's moving share); still gaps are no frame times
+(`analysis.py`). Not a threshold change. Regression test
+`test_player_stopping_is_not_a_drop_in_cfr_or_vfr` (CFR + VFR). Re-runs: prototype tuning and
+held-out reports **identical**; Phase 3 report identical except the summary line of
+`p3_v1game_vfr` (median 54 → 53.5, measurable 91.5 → 93 %; same 4 detections, all TP). VFR copy
+now: 1 freeze / 0 drops / 4 stutters, median 57 — same as the original.
+Also: damaged-file message now names the file and says "damaged or incomplete" instead of
+printing the full internal path.
+
+**Recorded, not tuned:** the AVI re-encode does not report the 18.37 s freeze — the first frame
+of the hold differs by 0.33 (> 0.25 repeat threshold), the same compression limitation as the
+missed held-out freeze (P2). (In the original that freeze is the known editing-transition FP.)
+
+Demo: `docs/DEMO_GUIDE.docx` (`backend/scripts/build_demo_guide.py`, numbers read from
+results.json): checklist, 6 timed steps (intro, CLI, GUI, known-defect proof, errors,
+limitations), likely questions, troubleshooting. Step 4 rehearsed through the real page
+(headless Chrome): freeze shown at 00:10.000–00:10.800. `PROJECT_DOCUMENTATION.docx` rebuilt:
+new §17.6 Phase 6 table, VFR rule in §8.2 / Eq. 9, roadmap P1–P6 done.
+Suite: **209 passed, 3 xfailed**.
+
+Limitations: all test videos derive from one recording of one game; no FPS-counter or profiler
+ground truth; tested on macOS only.
+

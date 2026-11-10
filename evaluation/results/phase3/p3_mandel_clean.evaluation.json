@@ -19,5 +19,6 @@
       "false_negatives": []
     }
   },
-  "unscored_predictions": 0
+  "unscored_predictions": 0,
+  "ignored_predictions": 0
 }
